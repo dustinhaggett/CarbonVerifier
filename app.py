@@ -114,14 +114,18 @@ with st.sidebar:
     st.markdown("".join(rows_html), unsafe_allow_html=True)
 
     st.markdown('<div style="height:14px"></div>', unsafe_allow_html=True)
+    area_label = ui.tip("AREA", key="Hectare")
+    start_label = ui.tip("START", custom="The date this REDD+ project officially started selling carbon credits. All forest loss after this date is what the credits were sold to prevent.")
+    buyers_label = ui.tip("BUYERS", custom="Corporations publicly named as having purchased credits from this project (per investigative journalism + registry retirement records). Specific volumes are usually not disclosed at the project level.")
+    boundary_label = ui.tip("BOUNDARY", key="Boundary (KML / WDPA)")
     st.markdown(
         f'<div style="padding:0 14px; font-family: var(--font-mono); font-size:10px; '
         f'letter-spacing:0.1em; color: var(--text-faint); line-height: 18px">'
         f'<div>COUNTRY: {proj.country.upper()}</div>'
-        f'<div>AREA: {proj.hectares:,} HA</div>'
-        f'<div>START: {proj.project_start}</div>'
-        f'<div>BUYERS: {", ".join(proj.buyers_known) or "—"}</div>'
-        f'<div>BOUNDARY: {proj.boundary_source.upper()}</div>'
+        f'<div>{area_label}: {proj.hectares:,} HA</div>'
+        f'<div>{start_label}: {proj.project_start}</div>'
+        f'<div>{buyers_label}: {", ".join(proj.buyers_known) or "—"}</div>'
+        f'<div>{boundary_label}: {proj.boundary_source.upper()}</div>'
         f'</div>',
         unsafe_allow_html=True,
     )
@@ -150,6 +154,9 @@ with st.sidebar:
     if st.sidebar.button("⟳ NEW_QUERY", use_container_width=True, key="new_query"):
         st.cache_data.clear()
         st.rerun()
+
+    # GLOSSARY — plain-English definitions of every jargon term, click to expand
+    st.markdown(ui.glossary_expander(), unsafe_allow_html=True)
 
     # SYSTEM_LOGS / TERMINAL footer items (visual)
     st.markdown(
@@ -247,19 +254,27 @@ if ndvi_valid:
 
 st.markdown(
     ui.kpi_strip([
-        {"label": "Forest 2000", "value": f"{forest_2000:,.0f}", "unit": "Ha"},
+        {
+            "label": "Forest 2000", "value": f"{forest_2000:,.0f}", "unit": "Ha",
+            "tip_key": "Forest 2000",
+        },
         {
             "label": "Post-start loss",
             "value": f"-{post_loss:,.0f}",
             "unit": f"Ha  ({loss_pct:.1f}%)",
             "kind": "error",
+            "tip_key": "Post-start loss",
         },
-        {"label": "Additionality verdict", "pill_text": risk_text},
+        {
+            "label": "Additionality verdict", "pill_text": risk_text,
+            "tip_key": "Additionality verdict",
+        },
         {
             "label": "Latest NDVI",
             "value": ndvi_latest,
             "kind": "secondary",
             "sparkline": ndvi_spark,
+            "tip_key": "NDVI",
         },
     ]),
     unsafe_allow_html=True,
@@ -370,6 +385,7 @@ with tab_map:
             entries.append({
                 "head": f"DETECTION: {worst_y}-MAX-LOSS",
                 "head_kind": "error",
+                "tip": f"The single worst-loss year inside the project boundary after the project start. In {worst_y}, {worst_h:,.0f} hectares of forest were cleared.",
                 "lines": [
                     f"Object: Forest-cover loss event",
                     f"Delta: -{worst_h:,.0f} Ha within boundary",
@@ -384,6 +400,7 @@ with tab_map:
             entries.append({
                 "head": f"RE-SCAN: {scene_date} Z",
                 "head_kind": "ok",
+                "tip": "The most recent Sentinel-2 satellite scene used to compute NDVI for this project. Pulled from the Element 84 STAC API; 'Z' = UTC.",
                 "lines": [
                     f"Atmosphere: Cloud Coverage {cloud:.1f}%",
                     f"Sensor: Sentinel-2 MSI / Tile {tile}",
@@ -397,6 +414,7 @@ with tab_map:
             entries.append({
                 "head": f"NDVI_DEVIATION: {delta:+.2f} {arrow}",
                 "head_kind": kind,
+                "tip": "Change in NDVI (vegetation health) between the first and most recent year. NDVI ranges 0–1; a drop of 0.05+ inside an intact tropical forest is unusual and worth investigating.",
                 "lines": [
                     f"Span: {ndvi_valid[0]['year']} → {ndvi_valid[-1]['year']}",
                     f"Status: {'Alert triggered' if delta < -0.05 else 'Within tolerance'}",

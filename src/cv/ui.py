@@ -30,6 +30,62 @@ def load_css() -> str:
     return f"<style>{css}</style>"
 
 
+# ── Plain-English glossary for the dashboard ─────────────────────────────────
+# Each entry: short term  → one-paragraph explanation aimed at someone who has
+# never opened a Verra registry page or a satellite-data tool. Used by the
+# tip() helper to wrap inline terms with hover-tooltips, and by the Glossary
+# expander in the sidebar as a catch-all reference.
+GLOSSARY: dict[str, str] = {
+    "VCS": "Verified Carbon Standard — the world's largest voluntary carbon-credit registry, run by Verra. Every project here has a VCS ID like VCS832.",
+    "REDD+": "Reducing Emissions from Deforestation and forest Degradation — a category of carbon project where you sell credits for protecting forest that you claim would otherwise be cleared.",
+    "Hectare": "10,000 m² — about the size of a soccer pitch. The standard unit for forest area.",
+    "Forest 2000": "How much tree-cover (≥30% canopy) the project area had in the year 2000. Year 2000 is the global baseline used by the Hansen forest dataset; all later loss is measured against it.",
+    "Post-start loss": "Hectares of forest cleared inside the project boundary AFTER the project officially started selling credits. This is what the credits were sold to prevent.",
+    "Additionality": "Did the project actually save forest that would have been lost otherwise? It's the central integrity question for any carbon credit. We test it by comparing the project's loss rate to nearby unprotected land of similar size and biome.",
+    "Additionality verdict": "STRONG = project lost much less forest than nearby unprotected land. WEAK = small but positive difference. NONE = no detectable difference. NEGATIVE = project lost MORE forest than controls — credits arguably represent no real climate benefit.",
+    "NDVI": "Normalized Difference Vegetation Index — a 0-to-1 satellite measure of how much chlorophyll plants are producing. Healthy Amazon rainforest reads ~0.85; bare ground reads <0.2.",
+    "Hansen GFC": "Hansen Global Forest Change — the gold-standard global deforestation dataset, run by University of Maryland. 30-meter resolution, annual since 2001. Free, no auth.",
+    "Sentinel-2": "European Space Agency satellite pair providing free 10-meter optical imagery every 5 days. The imagery you see on the map is Sentinel-2.",
+    "MGRS tile": "Military Grid Reference System — Sentinel-2 imagery is delivered in fixed 100km×100km tiles. Each tile gets an ID like 22MGB; we pick the same tile each year so the time series is comparable.",
+    "Cloud cover": "Percentage of a satellite scene blocked by clouds. We pick the least-cloudy scene per year. <5% is excellent, >20% gets rejected.",
+    "Boundary (KML / WDPA)": "The exact polygon defining the project's registered area. KML is the format Verra hosts. WDPA is for protected areas like national parks. Without a real polygon, we fall back to a bounding-box approximation centered on the published coordinates — less accurate.",
+    "Carbon credit": "A tradable certificate representing 1 tonne of CO₂ supposedly avoided or removed. Companies buy them to claim 'net zero' or 'carbon neutral' status. The voluntary carbon market is ~$2B/year.",
+    "Verra registry": "The publicly searchable database where every VCS-certified project lives. Each project has its own page with documents, issuance history, and (sometimes) a downloadable boundary KML.",
+    "Risk pill": "Color-coded summary of the project's credit integrity. CRITICAL (red) / HIGH (red) / MODERATE (orange) / LOW (green) / VERIFIED (green). Derived from the additionality verdict.",
+    "Anomaly": "An unusual event the system flagged from the satellite record — typically the worst-loss year inside the project boundary, or a sharp NDVI drop.",
+    "LOSS_ID": "Internal label for a detection event — the worst single-year forest loss inside the project boundary, with the area in hectares and a confidence score.",
+    "Biomass density": "Approximation of how much living plant matter is in the project area, from satellite vegetation indices. Used here as a 7-year mini-bar-chart of Hansen forest loss; tall red bars mark high-loss years.",
+    "EXPORT_DATA": "Click to download a ZIP bundle with this project's full data package: dataset JSON, NDVI timeseries, additionality test, all three Claude reports, time-lapse GIF, and the Folium boundary preview.",
+    "NEW_QUERY": "Clear all caches and re-run the analysis from disk. Use after editing projects.json or pulling a fresh KML.",
+    "Three voices / Briefs": "Same satellite evidence, three Claude-authored audit reports — Executive (for a sustainability buyer), Investigative (for a journalist), Regulator (for a Verra compliance auditor). Each cites the specific numbers from the Hansen + Sentinel-2 record.",
+}
+
+
+def tip(label: str, key: str | None = None, custom: str | None = None, below: bool = False) -> str:
+    """Wrap a label in a hover-tooltip. ``key`` looks up GLOSSARY; ``custom``
+    overrides with a one-off explanation. ``below`` flips the tooltip to
+    appear under the label (for elements at the top of the screen)."""
+    text = custom or GLOSSARY.get(key or label, "")
+    if not text:
+        return label
+    safe = text.replace('"', "&quot;").replace("\n", " ")
+    cls = "cv-tip below" if below else "cv-tip"
+    return f'<span class="{cls}" data-tip="{safe}">{label}</span>'
+
+
+def glossary_expander() -> str:
+    """Catch-all definitions panel for the sidebar bottom."""
+    items = []
+    for term, definition in GLOSSARY.items():
+        items.append(f'<dt>{term}</dt><dd>{definition}</dd>')
+    return (
+        '<details>'
+        '<summary>GLOSSARY · plain-english</summary>'
+        f'<dl>{"".join(items)}</dl>'
+        '</details>'
+    )
+
+
 def pill(text: str, kind: str = "pending") -> str:
     """Render an inline status pill. ``kind`` ∈ critical / high / moderate / low /
     verified / pending / monitoring."""
@@ -105,10 +161,17 @@ def section_header(
 def kpi_strip(cells: list[dict]) -> str:
     """Render a 4-cell KPI strip. Each cell is a dict with at least
     {label, value} and optionally {unit, kind: "default"|"error"|"secondary",
-    sparkline: list[float] (0..1) | pill_text+pill_kind}."""
+    sparkline: list[float] (0..1) | pill_text+pill_kind, tip: str}.
+    ``tip`` (or ``tip_key``) wraps the label in a hover-tooltip."""
     parts = []
     for c in cells:
-        label = c.get("label", "")
+        raw_label = c.get("label", "")
+        if c.get("tip"):
+            label = tip(raw_label, custom=c["tip"], below=True)
+        elif c.get("tip_key"):
+            label = tip(raw_label, key=c["tip_key"], below=True)
+        else:
+            label = raw_label
         value = c.get("value", "")
         unit = f' <span class="unit">{c["unit"]}</span>' if c.get("unit") else ""
         kind = c.get("kind", "default")
@@ -144,20 +207,28 @@ def panel_close() -> str:
 
 def anomaly_log(entries: list[dict]) -> str:
     """ANOMALY_LOG side panel.
-    Each entry: {head: str, head_kind: "error"|"warn"|"ok", lines: list[str]}."""
+    Each entry: {head: str, head_kind: "error"|"warn"|"ok", lines: list[str],
+    tip: str (optional)}. The panel header itself carries a tooltip explaining
+    what an "anomaly" is in this context."""
+    panel_label = tip("ANOMALY_LOG", key="Anomaly")
+    panel_html = f'<div class="panel"><div class="panel-header">// {panel_label}</div>'
+
     if not entries:
-        return f'{panel_open("ANOMALY_LOG")}<div class="anomaly-entry"><div class="line">No anomalies logged.</div></div>{panel_close()}'
+        return f'{panel_html}<div class="anomaly-entry"><div class="line">No anomalies logged.</div></div></div>'
     parts = []
     for e in entries:
         head_kind = e.get("head_kind", "ok")
+        head_label = e.get("head", "")
+        if e.get("tip"):
+            head_label = tip(head_label, custom=e["tip"])
         lines = "".join(f'<div class="line">{ln}</div>' for ln in e.get("lines", []))
         parts.append(
             f'<div class="anomaly-entry">'
-            f'<div class="head {head_kind}">{e.get("head","")}</div>'
+            f'<div class="head {head_kind}">{head_label}</div>'
             f'{lines}'
             f'</div>'
         )
-    return f'{panel_open("ANOMALY_LOG")}{"".join(parts)}{panel_close()}'
+    return f'{panel_html}{"".join(parts)}</div>'
 
 
 def biomass_density(values: list[dict]) -> str:

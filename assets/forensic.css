@@ -346,6 +346,7 @@ li[role="option"][aria-selected="true"] {
 /* === Tab nav restyle ======================================================== */
 .stTabs [data-baseweb="tab-list"] {
   gap: 0; background: transparent; border-bottom: 1px solid var(--border-dim); padding: 0;
+  pointer-events: auto !important;
 }
 .stTabs [data-baseweb="tab"] {
   background: transparent; border: none; border-bottom: 2px solid transparent;
@@ -353,6 +354,13 @@ li[role="option"][aria-selected="true"] {
   font-family: var(--font-body) !important; font-weight: 700; font-size: 11px;
   letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--text-faint); padding: 8px 16px;
+  pointer-events: auto !important; cursor: pointer !important;
+  position: relative; z-index: 5;
+}
+/* And every child element of a tab — Streamlit wraps the label in <p> which
+   should still bubble clicks, but force pointer-events:auto for safety. */
+.stTabs [data-baseweb="tab"] * {
+  pointer-events: auto !important;
 }
 .stTabs [data-baseweb="tab"]:hover { color: var(--text); }
 .stTabs [aria-selected="true"] {
@@ -413,6 +421,64 @@ li[role="option"][aria-selected="true"] {
   font-family: var(--font-body); color: var(--text);
 }
 .stTabs [data-baseweb="tab-panel"] p, .stTabs [data-baseweb="tab-panel"] li { color: var(--text); }
+
+/* === Hover tooltip helper (.cv-tip) ======================================== */
+/* Wrap any term in <span class="cv-tip" data-tip="plain-english explanation">…</span>
+   and a themed tooltip pops on hover. Designed for jargon so newcomers can
+   decode VCS / NDVI / additionality / etc. without leaving the page. */
+.cv-tip {
+  position: relative; cursor: help;
+  border-bottom: 1px dotted var(--text-faint);
+}
+.cv-tip:hover { color: var(--accent-bright); border-bottom-color: var(--accent-bright); }
+.cv-tip::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 6px); left: 0;
+  width: 280px; max-width: 320px;
+  padding: 10px 12px;
+  background: var(--surface-high);
+  border: 1px solid var(--accent-bright);
+  color: var(--text);
+  font-family: var(--font-body); font-weight: 400;
+  font-size: 12px; line-height: 1.45; letter-spacing: 0;
+  text-transform: none;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.55);
+  opacity: 0; pointer-events: none;
+  transform: translateY(4px);
+  transition: opacity 120ms ease, transform 120ms ease;
+  z-index: 10000;
+  white-space: normal;
+}
+.cv-tip:hover::after {
+  opacity: 1; transform: translateY(0);
+}
+/* Variant: tooltip below instead of above (use for top-row elements) */
+.cv-tip.below::after {
+  top: calc(100% + 6px); bottom: auto;
+}
+
+/* Glossary expander styling */
+[data-testid="stSidebar"] details {
+  border-top: 1px solid var(--border-dim); padding: 12px 14px; margin-top: 8px;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em;
+}
+[data-testid="stSidebar"] details summary {
+  cursor: pointer; color: var(--text-faint); text-transform: uppercase;
+  font-weight: 700; list-style: none;
+}
+[data-testid="stSidebar"] details summary:hover { color: var(--accent-bright); }
+[data-testid="stSidebar"] details summary::before { content: "// "; color: var(--accent-bright); }
+[data-testid="stSidebar"] details[open] summary { color: var(--accent-bright); margin-bottom: 8px; }
+[data-testid="stSidebar"] details dl { margin: 0; }
+[data-testid="stSidebar"] details dt {
+  color: var(--accent-bright); font-weight: 700; margin-top: 8px;
+  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+}
+[data-testid="stSidebar"] details dd {
+  margin: 2px 0 0 0; color: var(--text-dim); font-family: var(--font-body);
+  font-size: 12px; line-height: 1.45; letter-spacing: 0; text-transform: none;
+}
 
 /* === Scanline overlay (used inside Map iframe wrapper) ==================== */
 .scanlines {
