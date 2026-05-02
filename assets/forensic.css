@@ -1,0 +1,284 @@
+/* CarbonVerifier — Orbital Forensic Interface
+ * Ported from design/code.html. Bloomberg Terminal × NASA control room.
+ * Design tokens follow design/DESIGN.md but use the deeper navy palette
+ * the actual mockup ships with (#0B0F19 vs the YAML's #131314).
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: 400; font-style: normal; font-size: 18px;
+  line-height: 1; letter-spacing: normal; text-transform: none;
+  display: inline-block; white-space: nowrap; word-wrap: normal;
+  direction: ltr; -webkit-font-feature-settings: 'liga'; font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+:root {
+  /* Surface tiers (deep-navy void → progressively lighter panels) */
+  --bg: #0B0F19;
+  --surface-low: #0e1320;
+  --surface: #161B22;
+  --surface-high: #1e293b;
+  --surface-overlay: rgba(15, 23, 42, 0.85);
+
+  /* Text */
+  --text: #e5e2e2;
+  --text-dim: #94a3b8;
+  --text-faint: #64748b;
+  --text-mute: #475569;
+
+  /* Borders */
+  --border: #334155;        /* slate-700 */
+  --border-dim: #1e293b;    /* slate-800 */
+
+  /* Semantic accents */
+  --accent: #10b981;        /* emerald-500 */
+  --accent-bright: #4ade80; /* emerald-400 */
+  --accent-glow: rgba(52, 211, 153, 0.3);
+
+  --secondary: #4de082;     /* mint-green */
+  --tertiary: #ffb783;      /* alarm orange */
+  --error: #ffb4ab;         /* alert red */
+  --error-bg: rgba(255, 180, 171, 0.10);
+
+  --pending: #94a3b8;
+  --monitoring: #fb923c;
+
+  /* Typography */
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Space Grotesk', 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* === Streamlit chrome de-styling ============================================ */
+/* Hide Streamlit branding + default header padding */
+#MainMenu, footer[data-testid="stBottomBlockContainer"], header[data-testid="stHeader"] { display: none; }
+
+/* Body & page bg */
+html, body, .stApp { background: var(--bg) !important; color: var(--text) !important; font-family: var(--font-body) !important; }
+
+/* Top-of-page padding */
+.main .block-container { padding-top: 0.5rem; padding-bottom: 0.5rem; max-width: 100%; }
+
+/* Sidebar styling */
+[data-testid="stSidebar"] { background-color: #0B0F19 !important; border-right: 1px solid var(--border-dim); }
+[data-testid="stSidebar"] > div { padding-top: 0; }
+[data-testid="stSidebar"] .stMarkdown { color: var(--text); }
+
+/* === Top app bar ============================================================ */
+.top-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--bg); border-bottom: 1px solid var(--border-dim);
+  padding: 8px 16px; margin: -1rem -1rem 8px -1rem;
+  font-family: var(--font-mono); font-size: 14px;
+}
+.top-bar .brand {
+  font-family: var(--font-mono); font-weight: 900;
+  letter-spacing: 0.18em; color: var(--text);
+  font-size: 15px; text-transform: uppercase;
+}
+.top-bar .meta { font-family: var(--font-mono); font-size: 11px; color: var(--text-faint); letter-spacing: 0.1em; }
+
+/* === Section header (ABOVE the KPI strip) ================================== */
+.section-header {
+  background: var(--surface); border-bottom: 1px solid var(--border-dim);
+  padding: 12px 16px; margin: 0 -1rem;
+}
+.section-header .row { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.section-header h1 {
+  font-family: var(--font-body); font-weight: 700; font-size: 22px;
+  letter-spacing: -0.02em; color: var(--text); margin: 0;
+}
+.section-header .lat-lon {
+  font-family: var(--font-mono); font-size: 12px; color: var(--text-faint);
+  letter-spacing: 0.05em;
+}
+.section-header .anomaly {
+  font-family: var(--font-body); font-size: 13px; color: var(--error);
+  margin-top: 6px; display: flex; align-items: center; gap: 6px;
+}
+.section-header .anomaly::before {
+  content: ""; display: inline-block; width: 8px; height: 8px;
+  background: var(--error); border-radius: 50%;
+  box-shadow: 0 0 8px rgba(255, 180, 171, 0.6);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+/* === KPI strip ============================================================== */
+.kpi-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--border-dim);
+  border-bottom: 1px solid var(--border-dim);
+  margin: 0 -1rem 16px -1rem;
+  background: rgba(11, 15, 25, 0.5);
+}
+.kpi-cell {
+  padding: 14px 16px; border-right: 1px solid var(--border-dim);
+}
+.kpi-cell:last-child { border-right: none; }
+.kpi-cell .label {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint);
+  margin-bottom: 6px; display: block;
+}
+.kpi-cell .value {
+  font-family: var(--font-mono); font-size: 30px; font-weight: 500;
+  color: var(--text); letter-spacing: 0.02em; line-height: 34px;
+}
+.kpi-cell .value .unit { font-size: 12px; font-weight: 400; color: var(--text-faint); margin-left: 4px; }
+.kpi-cell .value.error { color: var(--error); }
+.kpi-cell .value.secondary { color: var(--secondary); }
+
+/* === Status pills =========================================================== */
+.pill {
+  display: inline-flex; align-items: center;
+  padding: 2px 8px; font-family: var(--font-mono);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; border: 1px solid;
+  background: transparent;
+}
+.pill-critical { color: var(--error); border-color: var(--error); background: var(--error-bg); }
+.pill-high     { color: var(--error); border-color: var(--error); background: rgba(255, 180, 171, 0.05); }
+.pill-moderate { color: var(--tertiary); border-color: var(--tertiary); background: rgba(255, 183, 131, 0.10); }
+.pill-low      { color: var(--accent-bright); border-color: var(--accent-bright); background: rgba(74, 222, 128, 0.10); }
+.pill-verified { color: var(--accent-bright); border-color: var(--accent-bright); background: rgba(74, 222, 128, 0.10); }
+.pill-pending  { color: var(--text-dim); border-color: var(--border); background: var(--surface); }
+.pill-monitoring { color: var(--monitoring); border-color: var(--monitoring); background: rgba(251, 146, 60, 0.10); }
+
+/* === Sparkline mini-bars ==================================================== */
+.spark-row { display: flex; align-items: flex-end; gap: 2px; height: 24px; }
+.spark-bar { flex: 1; background: var(--secondary); border-top: 1px solid var(--accent-bright); }
+
+/* === Sidebar project list =================================================== */
+.sector-nav {
+  padding: 12px 14px; border-bottom: 1px solid var(--border-dim);
+  display: flex; align-items: center; gap: 10px;
+}
+.sector-nav .icon-box {
+  width: 28px; height: 28px; background: var(--surface-high);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent-bright); font-family: var(--font-mono); font-weight: 700;
+}
+.sector-nav .label-stack .title {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em;
+  text-transform: uppercase; font-weight: 700; color: var(--text);
+}
+.sector-nav .label-stack .sub {
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--text-faint);
+}
+
+/* Sidebar selectbox restyle */
+[data-testid="stSidebar"] [data-baseweb="select"] > div {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 0 !important;
+}
+[data-testid="stSidebar"] [data-baseweb="select"] [data-baseweb="select-arrow"] svg { color: var(--text-faint); }
+
+/* === Right-rail panels (ANOMALY_LOG, BIOMASS_DENSITY) ====================== */
+.panel {
+  background: var(--surface); border: 1px solid var(--border);
+  padding: 12px;
+}
+.panel-header {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim);
+  margin-bottom: 10px;
+}
+.anomaly-entry {
+  border-bottom: 1px solid var(--border-dim); padding-bottom: 8px; margin-bottom: 8px;
+  font-family: var(--font-mono); font-size: 11px; line-height: 16px;
+}
+.anomaly-entry:last-child { border-bottom: none; }
+.anomaly-entry .head { margin-bottom: 4px; }
+.anomaly-entry .head.error { color: var(--error); }
+.anomaly-entry .head.warn { color: var(--tertiary); }
+.anomaly-entry .head.ok { color: var(--text); }
+.anomaly-entry .line { color: var(--text-dim); font-size: 11px; }
+
+/* === Tab nav restyle ======================================================== */
+.stTabs [data-baseweb="tab-list"] {
+  gap: 0; background: transparent; border-bottom: 1px solid var(--border-dim); padding: 0;
+}
+.stTabs [data-baseweb="tab"] {
+  background: transparent; border: none; border-bottom: 2px solid transparent;
+  border-radius: 0 !important;
+  font-family: var(--font-body) !important; font-weight: 700; font-size: 11px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-faint); padding: 8px 16px;
+}
+.stTabs [data-baseweb="tab"]:hover { color: var(--text); }
+.stTabs [aria-selected="true"] {
+  color: var(--accent-bright) !important;
+  border-bottom-color: var(--accent-bright) !important;
+  background: transparent !important;
+  text-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* === Buttons =============================================================== */
+.stButton > button, .stDownloadButton > button {
+  background: var(--surface-high) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 0 !important;
+  font-family: var(--font-mono) !important;
+  font-size: 11px !important; font-weight: 700 !important;
+  letter-spacing: 0.1em !important; text-transform: uppercase !important;
+  color: var(--text) !important;
+}
+.stButton > button:hover, .stDownloadButton > button:hover {
+  background: var(--surface) !important; border-color: var(--accent-bright) !important;
+  color: var(--accent-bright) !important;
+}
+
+/* Primary button (NEW_QUERY style) */
+.stButton.primary > button {
+  background: var(--accent) !important; color: #003919 !important;
+  border-color: var(--accent) !important;
+}
+
+/* === Metric overrides (we won't use st.metric, but defensive) ============= */
+[data-testid="stMetric"] { background: var(--surface); border: 1px solid var(--border); border-radius: 0; padding: 12px; }
+[data-testid="stMetricLabel"] { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
+[data-testid="stMetricValue"] { font-family: var(--font-mono); font-weight: 500; color: var(--text); }
+
+/* === Plotly charts background blend ======================================= */
+.js-plotly-plot, .plot-container { background: transparent !important; }
+
+/* === Footer status bar ===================================================== */
+.status-footer {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: var(--bg); border-top: 1px solid var(--border-dim);
+  padding: 6px 16px; font-family: var(--font-mono); font-size: 10px;
+  color: var(--text-faint); letter-spacing: 0.1em;
+  display: flex; justify-content: space-between; z-index: 100;
+}
+.status-footer .group { display: flex; gap: 16px; }
+.status-footer .live { color: var(--accent-bright); text-transform: uppercase; }
+.status-footer .cursor { animation: blink 1s steps(2, start) infinite; }
+@keyframes blink { to { visibility: hidden; } }
+
+/* === Dataframes =========================================================== */
+[data-testid="stDataFrame"] { background: var(--surface); border: 1px solid var(--border); }
+
+/* === Markdown body in tabs ================================================ */
+.stTabs [data-baseweb="tab-panel"] h1, .stTabs [data-baseweb="tab-panel"] h2,
+.stTabs [data-baseweb="tab-panel"] h3 {
+  font-family: var(--font-body); color: var(--text);
+}
+.stTabs [data-baseweb="tab-panel"] p, .stTabs [data-baseweb="tab-panel"] li { color: var(--text); }
+
+/* === Scanline overlay (used inside Map iframe wrapper) ==================== */
+.scanlines {
+  position: relative;
+}
+.scanlines::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.05) 50%);
+  background-size: 100% 2px;
+  z-index: 50;
+}

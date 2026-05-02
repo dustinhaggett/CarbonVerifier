@@ -1,0 +1,163 @@
+{
+  "project": {
+    "id": "ADPML",
+    "name": "ADPML / Pacajai REDD+ (Portel-Par\u00e1)",
+    "country": "Brazil",
+    "hectares": 148975,
+    "project_start": "2009-01-01",
+    "centroid": [
+      -2.05,
+      -51.3
+    ],
+    "bbox": [
+      -51.537952,
+      -2.423432,
+      -51.019143,
+      -1.79245
+    ],
+    "registry_url": "https://registry.verra.org/",
+    "boundary_source": "real_kml_polygon"
+  },
+  "sentinel": {
+    "2018": {
+      "project_id": "ADPML",
+      "year": 2018,
+      "scene": {
+        "id": "S2B_22MDC_20180901_0_L2A",
+        "datetime": "2018-09-01T13:51:03.459000Z",
+        "cloud_cover": 5.494663,
+        "bbox": [
+          -51.900057305937096,
+          -2.80264204592482,
+          -50.912194040843374,
+          -1.8090605246239422
+        ],
+        "mgrs_tile": 22
+      },
+      "local_paths": {
+        "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2018/red.tif",
+        "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2018/nir.tif",
+        "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2018/scl.tif",
+        "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2018/visual.tif"
+      },
+      "fetched_at": "2026-05-01T12:44:44.089005+00:00"
+    },
+    "2020": {
+      "project_id": "ADPML",
+      "year": 2020,
+      "scene": {
+        "id": "S2A_22MDC_20200905_0_L2A",
+        "datetime": "2020-09-05T13:53:11.217000Z",
+        "cloud_cover": 1.220776,
+        "bbox": [
+          -51.900057305937096,
+          -2.80264204592482,
+          -50.912194040843374,
+          -1.8090605246239422
+        ],
+        "mgrs_tile": 22
+      },
+      "local_paths": {
+        "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2020/red.tif",
+        "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2020/nir.tif",
+        "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2020/scl.tif",
+        "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2020/visual.tif"
+      },
+      "fetched_at": "2026-05-01T12:56:33.939703+00:00"
+    },
+    "2022": {
+      "project_id": "ADPML",
+      "year": 2022,
+      "scene": {
+        "id": "S2A_22MDC_20221005_0_L2A",
+        "datetime": "2022-10-05T13:53:13.761000Z",
+        "cloud_cover": 9.398303,
+        "bbox": [
+          -51.900057305937096,
+          -2.80264204592482,
+          -50.912194040843374,
+          -1.8090605246239422
+        ],
+        "mgrs_tile": "22MDC"
+      },
+      "local_paths": {
+        "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2022/red.tif",
+        "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2022/nir.tif",
+        "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2022/scl.tif",
+        "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2022/visual.tif"
+      },
+      "fetched_at": "2026-05-01T13:15:46.997295+00:00"
+    },
+    "2024": {
+      "project_id": "ADPML",
+      "year": 2024,
+      "scene": {
+        "id": "S2B_22MDC_20240711_0_L2A",
+        "datetime": "2024-07-11T13:53:08.652000Z",
+        "cloud_cover": 9.006659,
+        "bbox": [
+          -51.900057305937096,
+          -2.80264204592482,
+          -50.912194040843374,
+          -1.8090605246239422
+        ],
+        "mgrs_tile": 22
+      },
+      "local_paths": {
+        "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2024/red.tif",
+        "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2024/nir.tif",
+        "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2024/scl.tif",
+        "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2024/visual.tif"
+      },
+      "fetched_at": "2026-05-01T14:18:27.592112+00:00"
+    }
+  },
+  "hansen": {
+    "lossyear": [
+      "/Users/berlin/CarbonVerifier/data/raw/hansen/Hansen_GFC-2023-v1.11_lossyear_00N_060W.tif"
+    ],
+    "treecover2000": [
+      "/Users/berlin/CarbonVerifier/data/raw/hansen/Hansen_GFC-2023-v1.11_treecover2000_00N_060W.tif"
+    ]
+  },
+  "forest_loss_summary": {
+    "bbox": [
+      -51.537952,
+      -2.423432,
+      -51.019143,
+      -1.79245
+    ],
+    "treecover_threshold_pct": 30,
+    "pixel_area_ha": 0.0774,
+    "forest_2000_ha": 123275.5,
+    "loss_by_year_ha": {
+      "2001": 276.93,
+      "2002": 34.52,
+      "2003": 75.93,
+      "2004": 253.94,
+      "2005": 103.95,
+      "2006": 112.23,
+      "2007": 116.1,
+      "2008": 485.21,
+      "2009": 582.04,
+      "2010": 193.34,
+      "2011": 299.76,
+      "2012": 178.4,
+      "2013": 457.5,
+      "2014": 641.25,
+      "2015": 287.92,
+      "2016": 998.83,
+      "2017": 984.66,
+      "2018": 635.21,
+      "2019": 476.16,
+      "2020": 701.15,
+      "2021": 424.07,
+      "2022": 274.07,
+      "2023": 828.55
+    },
+    "loss_pre_project_start_ha": 1458.81,
+    "loss_post_project_start_ha": 7962.91,
+    "project_start_year": 2009
+  },
+  "fetched_at": "2026-05-01T14:19:21.246151+00:00"
+}

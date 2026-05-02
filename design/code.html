@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CARBON_VERIFY // SATELLITE_CORE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Space+Grotesk:wght@500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scanline-overlay {
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.05) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.01), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.01));
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#e5e2e2",
+                        "on-tertiary-container": "#bf6308",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#353435",
+                        "primary-container": "#0b0f19",
+                        "tertiary": "#ffb783",
+                        "surface-container": "#201f20",
+                        "on-primary-container": "#787b88",
+                        "inverse-primary": "#5a5e6a",
+                        "surface-tint": "#c3c6d4",
+                        "primary-fixed": "#dfe2f1",
+                        "on-primary-fixed-variant": "#434652",
+                        "secondary": "#4de082",
+                        "background": "#131314",
+                        "on-primary": "#2c303b",
+                        "inverse-surface": "#e5e2e2",
+                        "on-error": "#690005",
+                        "on-tertiary": "#4f2500",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#ffdcc5",
+                        "on-surface-variant": "#c6c6cc",
+                        "surface-bright": "#3a393a",
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#353435",
+                        "secondary-fixed": "#6dfe9c",
+                        "surface-dim": "#131314",
+                        "on-secondary-container": "#003e1c",
+                        "surface-container-lowest": "#0e0e0f",
+                        "outline": "#909096",
+                        "secondary-fixed-dim": "#4de082",
+                        "on-tertiary-fixed": "#301400",
+                        "primary": "#c3c6d4",
+                        "secondary-container": "#00b55d",
+                        "on-tertiary-fixed-variant": "#713700",
+                        "on-background": "#e5e2e2",
+                        "on-secondary": "#003919",
+                        "inverse-on-surface": "#313031",
+                        "primary-fixed-dim": "#c3c6d4",
+                        "on-secondary-fixed-variant": "#005227",
+                        "outline-variant": "#46464c",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-container-high": "#2a2a2b",
+                        "tertiary-container": "#1e0a00",
+                        "on-primary-fixed": "#171b26",
+                        "surface": "#131314",
+                        "on-secondary-fixed": "#00210c",
+                        "tertiary-fixed-dim": "#ffb783"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Space Grotesk"],
+                        "headline-md": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "data-mono": ["Space Grotesk"],
+                        "body-base": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["11px", {"lineHeight": "12px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-md": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-xl": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "data-mono": ["13px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-base": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface-container-lowest text-on-surface selection:bg-secondary selection:text-on-secondary overflow-hidden">
+<!-- TopAppBar Shell -->
+<header class="flex justify-between items-center w-full px-4 h-12 z-50 bg-[#0B0F19] border-b border-slate-800 fixed top-0 left-0">
+<div class="flex items-center gap-6">
+<span class="font-['Space_Grotesk'] text-lg font-black tracking-widest text-slate-100">CARBON_VERIFY // SATELLITE_CORE</span>
+<nav class="hidden md:flex gap-4 h-full items-center">
+<a class="font-['Inter'] uppercase tracking-tighter text-xs font-bold text-emerald-400 border-b-2 border-emerald-500 pb-1 shadow-[0_0_8px_rgba(52,211,153,0.3)]" href="#">MAP</a>
+<a class="font-['Inter'] uppercase tracking-tighter text-xs font-bold text-slate-500 hover:text-slate-300 transition-colors" href="#">TIME-LAPSE</a>
+<a class="font-['Inter'] uppercase tracking-tighter text-xs font-bold text-slate-500 hover:text-slate-300 transition-colors" href="#">NDVI</a>
+<a class="font-['Inter'] uppercase tracking-tighter text-xs font-bold text-slate-500 hover:text-slate-300 transition-colors" href="#">LOSS</a>
+<a class="font-['Inter'] uppercase tracking-tighter text-xs font-bold text-slate-500 hover:text-slate-300 transition-colors" href="#">ADDITIONALITY</a>
+<a class="font-['Inter'] uppercase tracking-tighter text-xs font-bold text-slate-500 hover:text-slate-300 transition-colors" href="#">BRIEFS</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-slate-900 border border-slate-700 px-3 py-1 font-['Space_Grotesk'] text-[10px] font-bold text-slate-200 hover:bg-slate-800 transition-all">EXPORT_DATA</button>
+<div class="flex items-center gap-2 text-slate-400">
+<span class="material-symbols-outlined cursor-pointer hover:text-slate-200">settings</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-slate-200">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-slate-200">account_circle</span>
+</div>
+</div>
+</header>
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-12 bottom-0 w-64 flex flex-col z-40 bg-[#0B0F19] border-r border-slate-800">
+<div class="p-4 border-b border-slate-800 flex items-center gap-3">
+<div class="w-8 h-8 rounded-sm bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-emerald-400 text-lg">radar</span>
+</div>
+<div>
+<p class="font-['Space_Grotesk'] text-[10px] uppercase tracking-wider text-slate-200 font-bold">SECTOR_NAV</p>
+<p class="font-['Space_Grotesk'] text-[8px] uppercase tracking-wider text-slate-500">ORBIT_SNTL_2</p>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto py-2">
+<!-- Project Picker -->
+<div class="flex flex-col">
+<div class="bg-slate-900 border-l-2 border-emerald-500 text-emerald-400 font-bold px-4 py-3 shadow-[inset_4px_0_10px_rgba(52,211,153,0.1)] flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-sm">flag</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-wider">PROJECT_ALPHA</span>
+</div>
+<span class="text-[8px] px-1 border border-emerald-500 bg-emerald-500/10">VERIFIED</span>
+</div>
+<div class="text-slate-500 px-4 py-3 border-l-2 border-transparent hover:bg-slate-900/50 hover:text-slate-200 flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-sm">warning</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-wider">PROJECT_BRAVO</span>
+</div>
+<span class="text-[8px] px-1 border border-error bg-error/10 text-error">HIGH RISK</span>
+</div>
+<div class="text-slate-500 px-4 py-3 border-l-2 border-transparent hover:bg-slate-900/50 hover:text-slate-200 flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-wider">PROJECT_CHARLIE</span>
+</div>
+<span class="text-[8px] px-1 border border-slate-600 bg-slate-800 text-slate-400">PENDING</span>
+</div>
+<div class="text-slate-500 px-4 py-3 border-l-2 border-transparent hover:bg-slate-900/50 hover:text-slate-200 flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-sm">radar</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-wider">PROJECT_DELTA</span>
+</div>
+<span class="text-[8px] px-1 border border-emerald-500 bg-emerald-500/10 text-emerald-400">VERIFIED</span>
+</div>
+<div class="text-slate-500 px-4 py-3 border-l-2 border-transparent hover:bg-slate-900/50 hover:text-slate-200 flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-sm">analytics</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-wider">PROJECT_ECHO</span>
+</div>
+<span class="text-[8px] px-1 border border-on-tertiary-container bg-on-tertiary-container/10 text-on-tertiary-container">MONITORING</span>
+</div>
+</div>
+</nav>
+<div class="p-4 border-t border-slate-800 space-y-4">
+<button class="w-full bg-emerald-500 hover:bg-emerald-600 text-on-secondary font-['Space_Grotesk'] text-[10px] font-black py-2 rounded-sm transition-all uppercase tracking-widest">
+                NEW_QUERY
+            </button>
+<div class="space-y-1">
+<div class="flex items-center gap-3 px-2 py-1 text-slate-500 hover:text-slate-300 cursor-pointer">
+<span class="material-symbols-outlined text-sm">terminal</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-wider">SYSTEM_LOGS</span>
+</div>
+<div class="flex items-center gap-3 px-2 py-1 text-slate-500 hover:text-slate-300 cursor-pointer">
+<span class="material-symbols-outlined text-sm">memory</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-wider">TERMINAL</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 mt-12 h-[calc(100vh-3rem)] overflow-y-auto bg-[#0B0F19]">
+<!-- Dashboard Header Area -->
+<section class="p-4 bg-[#161B22] border-b border-slate-800">
+<div class="flex justify-between items-start mb-1">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 bg-error animate-pulse shadow-[0_0_8px_rgba(255,180,171,0.6)]"></div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface">CARBON_VERIFY // PROJECT_AMAZON_CORE</h1>
+</div>
+<div class="font-data-mono text-data-mono text-slate-500">
+                    LAT: -3.4653 / LON: -62.2159
+                </div>
+</div>
+<p class="font-body-base text-body-base text-error flex items-center gap-2">
+<span class="material-symbols-outlined text-base">emergency_home</span>
+                Satellite anomaly detected: Unregistered logging within project boundaries.
+            </p>
+</section>
+<!-- KPI Strip -->
+<section class="grid grid-cols-4 gap-0 border-b border-slate-800">
+<div class="p-4 border-r border-slate-800 bg-[#0B0F19]/50">
+<p class="font-label-caps text-label-caps text-slate-500 mb-2 uppercase">Forest 2000</p>
+<p class="font-data-mono text-2xl text-on-surface">84,200 <span class="text-xs text-slate-500 font-normal">Ha.</span></p>
+</div>
+<div class="p-4 border-r border-slate-800 bg-[#0B0F19]/50">
+<p class="font-label-caps text-label-caps text-slate-500 mb-2 uppercase">Post-start loss</p>
+<div class="flex items-center gap-2">
+<p class="font-data-mono text-2xl text-error">-1,200 <span class="text-xs text-slate-500 font-normal">Ha.</span></p>
+<span class="material-symbols-outlined text-error" data-weight="fill">trending_down</span>
+</div>
+</div>
+<div class="p-4 border-r border-slate-800 bg-[#0B0F19]/50">
+<p class="font-label-caps text-label-caps text-slate-500 mb-2 uppercase">Additionality verdict</p>
+<div class="inline-flex items-center px-2 py-0.5 border border-error bg-error/20 text-error font-data-mono text-xs font-bold">
+                    [CRITICAL]
+                </div>
+</div>
+<div class="p-4 bg-[#0B0F19]/50">
+<p class="font-label-caps text-label-caps text-slate-500 mb-2 uppercase">Latest NDVI</p>
+<div class="flex items-end justify-between">
+<p class="font-data-mono text-2xl text-secondary">0.82</p>
+<div class="w-24 h-6 flex items-end gap-[1px]">
+<div class="flex-1 bg-secondary/20 h-2"></div>
+<div class="flex-1 bg-secondary/40 h-3"></div>
+<div class="flex-1 bg-secondary/30 h-4"></div>
+<div class="flex-1 bg-secondary/60 h-2"></div>
+<div class="flex-1 bg-secondary/80 h-5"></div>
+<div class="flex-1 bg-secondary/100 h-6"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Dynamic Content Area -->
+<section class="p-4 h-[calc(100vh-16rem)]">
+<div class="grid grid-cols-12 h-full gap-4">
+<!-- Main Visual Module -->
+<div class="col-span-9 bg-[#161B22] border border-slate-700 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full p-2 bg-slate-900/80 backdrop-blur-md flex justify-between items-center z-10 border-b border-slate-700">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-[9px] text-slate-300">LAYER: SEN-2_L2A_TRUE_COLOR</span>
+<span class="text-slate-600">|</span>
+<span class="font-label-caps text-[9px] text-slate-300">COORD: 3°27'55"S 62°12'57"W</span>
+</div>
+<div class="flex gap-2">
+<button class="bg-slate-800 hover:bg-slate-700 text-on-surface font-label-caps text-[9px] px-2 py-1 border border-slate-600 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">download</span> PDF_REPORT
+                            </button>
+<button class="bg-slate-800 hover:bg-slate-700 text-on-surface font-label-caps text-[9px] px-2 py-1 border border-slate-600 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">gif</span> EXPORT_GIF
+                            </button>
+</div>
+</div>
+<!-- Map Module -->
+<div class="w-full h-full relative">
+<img class="w-full h-full object-cover grayscale opacity-60 mix-blend-lighten" data-alt="A forensic top-down satellite view of a dense tropical rainforest with a high-contrast digital overlay. Glowing red vector polygons highlight areas of deforestation, while thin green coordinate grid lines span the image. The overall visual style is scientific and technological, with deep blacks, muted forest greens, and vibrant neon red indicators. Subtle scanning textures and crosshair markers are visible on the map interface." data-location="Amazon Rainforest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8Wd9xsevnsfQawjzkEgRqrT9DEShDN_sY_8359ssa-6O0EokKvH7PO_8LLwQSlg-sK9gFau-eaxnY6FAIEhzD0rgt6JxUk-ovc9vULIEMfJ8wp1Iub9kJfPUDRxGxzLGgCM6sEAzoGEG6K6aTyD7A3b6iHnht290hLdU-JDi28uxRhnDQgOLB-Z-tX9jRdwb9FGgstgSB4_YdvR5xjoJ-BQZ-KIYJsQif7osseitfoo1h7Y91m1Nk5JoJqcP-7KQj6mwOLEUbf-Ci"/>
+<!-- HUD Overlays -->
+<div class="scanline-overlay absolute inset-0"></div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-16 h-16 border border-emerald-500/50 relative">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-full bg-emerald-500/20"></div>
+<div class="absolute left-0 top-1/2 -translate-y-1/2 h-[1px] w-full bg-emerald-500/20"></div>
+</div>
+</div>
+<!-- Detection Boxes -->
+<div class="absolute top-1/3 left-1/4 border-2 border-error w-32 h-24 shadow-[0_0_15px_rgba(255,0,0,0.3)] flex flex-col justify-between">
+<div class="bg-error text-on-error font-data-mono text-[8px] p-0.5 uppercase">Loss_ID: #4922</div>
+<div class="bg-slate-900/80 p-1">
+<p class="text-[8px] font-data-mono text-on-surface">CONFIDENCE: 98.4%</p>
+<p class="text-[8px] font-data-mono text-on-surface">AREA: 12.4 Ha</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Forensic Sidebar Data -->
+<div class="col-span-3 flex flex-col gap-4">
+<div class="flex-1 bg-[#161B22] border border-slate-700 p-3 overflow-hidden">
+<h3 class="font-label-caps text-label-caps text-slate-400 mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">history</span> ANOMALY_LOG
+                        </h3>
+<div class="space-y-3 font-data-mono text-[10px]">
+<div class="border-b border-slate-800 pb-2">
+<p class="text-error mb-1">DETECTION: 2023-11-20 04:12 Z</p>
+<p class="text-slate-400">Object: Logging Truck Cluster</p>
+<p class="text-slate-400">Delta: +4 Vehicles detected</p>
+</div>
+<div class="border-b border-slate-800 pb-2">
+<p class="text-on-surface mb-1">RE-SCAN: 2023-11-20 16:45 Z</p>
+<p class="text-slate-400">Atmosphere: Cloud Coverage 12%</p>
+<p class="text-slate-400">Sensor: MSI Spectral Filter</p>
+</div>
+<div class="border-b border-slate-800 pb-2">
+<p class="text-on-tertiary-container mb-1">NDVI_DEVIATION: -0.14</p>
+<p class="text-slate-400">Zone: Alpha-4-Bravo</p>
+<p class="text-slate-400">Status: Alert Triggered</p>
+</div>
+</div>
+</div>
+<div class="h-40 bg-[#161B22] border border-slate-700 p-3">
+<h3 class="font-label-caps text-label-caps text-slate-400 mb-3">BIOMASS_DENSITY</h3>
+<div class="flex items-end gap-1 h-20">
+<div class="flex-1 bg-emerald-500/20 border-t border-emerald-500" style="height: 60%;"></div>
+<div class="flex-1 bg-emerald-500/20 border-t border-emerald-500" style="height: 65%;"></div>
+<div class="flex-1 bg-emerald-500/20 border-t border-emerald-500" style="height: 58%;"></div>
+<div class="flex-1 bg-error/20 border-t border-error" style="height: 35%;"></div>
+<div class="flex-1 bg-error/20 border-t border-error" style="height: 25%;"></div>
+<div class="flex-1 bg-error/20 border-t border-error" style="height: 22%;"></div>
+<div class="flex-1 bg-error/20 border-t border-error" style="height: 18%;"></div>
+</div>
+<div class="flex justify-between mt-2 font-data-mono text-[9px] text-slate-500">
+<span>AUG</span>
+<span>SEP</span>
+<span>OCT</span>
+<span class="text-error">NOV</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Terminal Bar -->
+<footer class="h-8 border-t border-slate-800 bg-[#0B0F19] px-4 flex items-center justify-between font-data-mono text-[9px] text-slate-500">
+<div class="flex gap-4">
+<span>SYSTEM: READY</span>
+<span>DB_CONNECTION: SECURE</span>
+<span>SENTINEL_SYNC: 0.02ms</span>
+</div>
+<div class="flex gap-4">
+<span class="text-emerald-400 uppercase">Verifying project compliance: Alpha-Amazon_Core</span>
+<span class="animate-pulse">_</span>
+</div>
+</footer>
+</main>
+</body></html>

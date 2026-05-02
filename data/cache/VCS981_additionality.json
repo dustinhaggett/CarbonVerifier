@@ -1,0 +1,85 @@
+{
+  "project_id": "VCS981",
+  "project_start_year": 2009,
+  "project": {
+    "bbox": [
+      -47.62,
+      -3.37,
+      -47.48,
+      -3.23
+    ],
+    "forest_2000_ha": 20969.7,
+    "loss_post_start_ha": 8366.77,
+    "loss_rate_pct": 39.9
+  },
+  "controls": [
+    {
+      "index": 0,
+      "bbox": [
+        -47.41,
+        -3.37,
+        -47.269999999999996,
+        -3.23
+      ],
+      "forest_2000_ha": 14588.66,
+      "loss_post_start_ha": 6061.55,
+      "loss_rate_pct": 41.55,
+      "error": null
+    },
+    {
+      "index": 1,
+      "bbox": [
+        -47.97,
+        -3.37,
+        -47.83,
+        -3.23
+      ],
+      "forest_2000_ha": 21695.06,
+      "loss_post_start_ha": 6701.76,
+      "loss_rate_pct": 30.89,
+      "error": null
+    },
+    {
+      "index": 2,
+      "bbox": [
+        -47.269999999999996,
+        -3.37,
+        -47.129999999999995,
+        -3.23
+      ],
+      "forest_2000_ha": 16134.88,
+      "loss_post_start_ha": 2291.61,
+      "loss_rate_pct": 14.2,
+      "error": null
+    },
+    {
+      "index": 3,
+      "bbox": [
+        -48.11,
+        -3.37,
+        -47.97,
+        -3.23
+      ],
+      "forest_2000_ha": 20615.33,
+      "loss_post_start_ha": 2331.57,
+      "loss_rate_pct": 11.31,
+      "error": null
+    },
+    {
+      "index": 4,
+      "bbox": [
+        -47.129999999999995,
+        -3.37,
+        -46.989999999999995,
+        -3.23
+      ],
+      "forest_2000_ha": 15954.95,
+      "loss_post_start_ha": 1955.57,
+      "loss_rate_pct": 12.26,
+      "error": null
+    }
+  ],
+  "mean_control_loss_rate_pct": 22.04,
+  "additionality_verdict": "NEGATIVE \u2014 project lost MORE forest than surrounding unprotected areas",
+  "rate_difference_pct": -17.86
+}

@@ -1,0 +1,36 @@
+[project]
+name = "carbonverifier"
+version = "0.1.0"
+description = "Satellite-verified audit tool for the voluntary carbon credit market"
+requires-python = ">=3.13"
+dependencies = [
+    "anthropic>=0.40",
+    "pystac-client>=0.8",
+    "planetary-computer>=1.0",
+    "rasterio>=1.4",
+    "rioxarray>=0.18",
+    "xarray>=2024.10",
+    "geopandas>=1.0",
+    "shapely>=2.0",
+    "pyproj>=3.7",
+    "folium>=0.18",
+    "streamlit>=1.40",
+    "streamlit-folium>=0.23",
+    "plotly>=5.24",
+    "pandas>=2.2",
+    "numpy>=2.1",
+    "requests>=2.32",
+    "python-dotenv>=1.0",
+    "reportlab>=4.2",
+    "pillow>=11.0",
+    "tqdm>=4.66",
+    "pyarrow>=18.0",
+    "scipy>=1.17.1",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"

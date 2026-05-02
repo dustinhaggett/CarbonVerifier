@@ -1,0 +1,23 @@
+{
+  "project_id": "VCS981",
+  "year": 2020,
+  "scene": {
+    "id": "S2B_22MHB_20200907_0_L2A",
+    "datetime": "2020-09-07T13:43:15.444000Z",
+    "cloud_cover": 0.894677,
+    "bbox": [
+      -48.302145499617595,
+      -3.7033948619102732,
+      -47.315807181277584,
+      -2.708544473449276
+    ],
+    "mgrs_tile": 22
+  },
+  "local_paths": {
+    "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2020/red.tif",
+    "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2020/nir.tif",
+    "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2020/scl.tif",
+    "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2020/visual.tif"
+  },
+  "fetched_at": "2026-05-01T11:52:00.603884+00:00"
+}

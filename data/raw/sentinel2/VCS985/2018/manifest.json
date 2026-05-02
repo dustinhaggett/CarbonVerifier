@@ -1,0 +1,23 @@
+{
+  "project_id": "VCS985",
+  "year": 2018,
+  "scene": {
+    "id": "S2B_18MUT_20180911_0_L2A",
+    "datetime": "2018-09-11T15:28:43.950000Z",
+    "cloud_cover": 18.063683,
+    "bbox": [
+      -76.81172501720101,
+      -7.324614248220806,
+      -75.81552864149772,
+      -6.329360680786627
+    ],
+    "mgrs_tile": 18
+  },
+  "local_paths": {
+    "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS985/2018/red.tif",
+    "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS985/2018/nir.tif",
+    "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS985/2018/scl.tif",
+    "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS985/2018/visual.tif"
+  },
+  "fetched_at": "2026-05-01T16:02:01.646987+00:00"
+}

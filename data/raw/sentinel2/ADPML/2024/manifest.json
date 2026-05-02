@@ -1,0 +1,23 @@
+{
+  "project_id": "ADPML",
+  "year": 2024,
+  "scene": {
+    "id": "S2B_22MDC_20240711_0_L2A",
+    "datetime": "2024-07-11T13:53:08.652000Z",
+    "cloud_cover": 9.006659,
+    "bbox": [
+      -51.900057305937096,
+      -2.80264204592482,
+      -50.912194040843374,
+      -1.8090605246239422
+    ],
+    "mgrs_tile": 22
+  },
+  "local_paths": {
+    "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2024/red.tif",
+    "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2024/nir.tif",
+    "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2024/scl.tif",
+    "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2024/visual.tif"
+  },
+  "fetched_at": "2026-05-01T14:18:27.592112+00:00"
+}

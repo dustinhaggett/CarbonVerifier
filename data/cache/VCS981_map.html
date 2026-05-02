@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_fd7edc0971d2f7ebbf2cb31f06f56b72 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_fd7edc0971d2f7ebbf2cb31f06f56b72" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_fd7edc0971d2f7ebbf2cb31f06f56b72 = L.map(
+                "map_fd7edc0971d2f7ebbf2cb31f06f56b72",
+                {
+                    center: [-3.3, -47.55],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_fd7edc0971d2f7ebbf2cb31f06f56b72);
+
+            
+
+        
+    
+            var tile_layer_21509381e9d1fd39b0379b34daefb180 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri World Imagery",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_21509381e9d1fd39b0379b34daefb180.addTo(map_fd7edc0971d2f7ebbf2cb31f06f56b72);
+        
+    
+            var tile_layer_95aaf52d878cf33c7969d257b6b7f485 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_95aaf52d878cf33c7969d257b6b7f485.addTo(map_fd7edc0971d2f7ebbf2cb31f06f56b72);
+        
+    
+            var rectangle_104fc698237180a605a46df767da17d3 = L.rectangle(
+                [[-3.37, -47.62], [-3.23, -47.48]],
+                {"bubblingMouseEvents": true, "color": "#ff3366", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff3366", "fillOpacity": 0.05, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_fd7edc0971d2f7ebbf2cb31f06f56b72);
+        
+    
+        var popup_e9ef838fec06441f0a1e9fca50b3f083 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_376f6f52ec86f7c0205922e5934761e2 = $(`<div id="html_376f6f52ec86f7c0205922e5934761e2" style="width: 100.0%; height: 100.0%;"><b>Cikel Brazilian Amazon REDD APD</b><br>Brazil — 27,435 ha<br>Project start: 2009-04-01<br>Boundary: approximate_bbox_from_centroid</div>`)[0];
+                popup_e9ef838fec06441f0a1e9fca50b3f083.setContent(html_376f6f52ec86f7c0205922e5934761e2);
+            
+        
+
+        rectangle_104fc698237180a605a46df767da17d3.bindPopup(popup_e9ef838fec06441f0a1e9fca50b3f083)
+        ;
+
+        
+    
+    
+            rectangle_104fc698237180a605a46df767da17d3.bindTooltip(
+                `<div>
+                     VCS981 — Cikel Brazilian Amazon REDD APD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6e57edd7019fcb09f28831ce9b4cac88 = L.circleMarker(
+                [-3.3, -47.55],
+                {"bubblingMouseEvents": true, "color": "#ffd166", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffd166", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_fd7edc0971d2f7ebbf2cb31f06f56b72);
+        
+    
+            circle_marker_6e57edd7019fcb09f28831ce9b4cac88.bindTooltip(
+                `<div>
+                     Centroid
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var layer_control_12bf93accaaf680976b418279d8ce069_layers = {
+                base_layers : {
+                    "Esri Satellite" : tile_layer_21509381e9d1fd39b0379b34daefb180,
+                    "OpenStreetMap" : tile_layer_95aaf52d878cf33c7969d257b6b7f485,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_12bf93accaaf680976b418279d8ce069 = L.control.layers(
+                layer_control_12bf93accaaf680976b418279d8ce069_layers.base_layers,
+                layer_control_12bf93accaaf680976b418279d8ce069_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_fd7edc0971d2f7ebbf2cb31f06f56b72);
+
+        
+</script>
+</html>
