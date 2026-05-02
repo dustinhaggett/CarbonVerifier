@@ -21,7 +21,10 @@ from streamlit_folium import st_folium
 from cv.paths import CACHE, PROCESSED
 from cv.pdf import markdown_to_pdf_bytes
 from cv.projects import get_project, load_projects
+from cv.bundle import build_zip
 from cv import ui
+
+import base64
 
 
 # ── Page config ──────────────────────────────────────────────────────────────
@@ -186,10 +189,23 @@ def _anomaly_string() -> str | None:
 
 
 # ── Top app bar ──────────────────────────────────────────────────────────────
+@st.cache_data(show_spinner=False)
+def _bundle_data_url(pid: str) -> str:
+    project_meta = {
+        "id": proj.id, "name": proj.name, "country": proj.country,
+        "hectares": proj.hectares, "project_start": proj.project_start,
+        "boundary_source": proj.boundary_source,
+        "buyers_known": proj.buyers_known,
+    }
+    blob = build_zip(pid, project_meta=project_meta)
+    return "data:application/zip;base64," + base64.b64encode(blob).decode()
+
 st.markdown(
     ui.top_bar(
         title="CARBON_VERIFY // SATELLITE_CORE",
         meta=f"PROJECT: {proj.id}",
+        export_href=_bundle_data_url(project_id),
+        export_filename=f"{proj.id}_bundle.zip",
     ),
     unsafe_allow_html=True,
 )

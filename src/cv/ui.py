@@ -37,14 +37,34 @@ def pill(text: str, kind: str = "pending") -> str:
     return f'<span class="pill {cls}">{text}</span>'
 
 
-def top_bar(title: str = "CARBON_VERIFY // SATELLITE_CORE", meta: str = "") -> str:
-    """Top app bar — brand on left, action cluster (EXPORT_DATA pill + icons) on right."""
+def top_bar(
+    title: str = "CARBON_VERIFY // SATELLITE_CORE",
+    meta: str = "",
+    export_href: str | None = None,
+    export_filename: str | None = None,
+) -> str:
+    """Top app bar — brand on left, action cluster (EXPORT_DATA + icons) on right.
+
+    If ``export_href`` is supplied (e.g. a ``data:application/zip;base64,...``
+    URL), the EXPORT_DATA pill becomes a real ``<a download>`` link."""
+    button_style = (
+        "display:inline-flex;align-items:center;padding:4px 10px;"
+        "border:1px solid var(--border);background:var(--surface-low);"
+        "font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:0.1em;"
+        "color:var(--text);text-transform:uppercase;text-decoration:none;cursor:pointer"
+    )
+    if export_href:
+        download_attr = f' download="{export_filename}"' if export_filename else ' download'
+        export_el = (
+            f'<a href="{export_href}"{download_attr} style="{button_style}" '
+            f'title="Download project ZIP bundle">EXPORT_DATA</a>'
+        )
+    else:
+        export_el = f'<span style="{button_style}">EXPORT_DATA</span>'
+
     icons = (
         '<div style="display:flex;align-items:center;gap:14px">'
-        '<span style="display:inline-flex;align-items:center;padding:4px 10px;'
-        'border:1px solid var(--border);background:var(--surface-low);'
-        'font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:0.1em;'
-        'color:var(--text);text-transform:uppercase">EXPORT_DATA</span>'
+        f'{export_el}'
         '<span class="material-symbols-outlined" style="color:var(--text-faint);font-size:18px">settings</span>'
         '<span class="material-symbols-outlined" style="color:var(--text-faint);font-size:18px">notifications</span>'
         '<span class="material-symbols-outlined" style="color:var(--text-faint);font-size:18px">account_circle</span>'

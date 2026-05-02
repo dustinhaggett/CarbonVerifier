@@ -49,6 +49,14 @@ Each tells a different story:
 | **NDVI** | **BRIEFS** | **TIME-LAPSE** |
 | ![](docs/screenshots/04_ndvi.png) | ![](docs/screenshots/05_briefs.png) | ![](docs/screenshots/06_timelapse.png) |
 
+## Demo deck
+
+Eight-slide pitch deck rendered in the same forensic-terminal aesthetic as the app — open [`docs/deck/index.html`](docs/deck/index.html) in any browser and present full-screen (`F`).
+
+[![pitch deck cover](docs/screenshots/deck/01.png)](docs/deck/index.html)
+
+A 90-second walkthrough script with timing cues, click cheat-sheet, and recovery plan if the live app lags lives at [`docs/DEMO_SCRIPT.md`](docs/DEMO_SCRIPT.md).
+
 ## Quickstart
 
 Requirements: Python 3.13, [`uv`](https://docs.astral.sh/uv/), an Anthropic API key.
