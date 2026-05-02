@@ -54,8 +54,83 @@
 }
 
 /* === Streamlit chrome de-styling ============================================ */
-/* Hide Streamlit branding + default header padding */
-#MainMenu, footer[data-testid="stBottomBlockContainer"], header[data-testid="stHeader"] { display: none; }
+/* Hide Streamlit branding + the Deploy button, BUT keep the sidebar toggle
+   reachable. Earlier rule was display:none on the whole header which trapped
+   the user out of the sidebar after collapsing it. */
+#MainMenu, footer[data-testid="stBottomBlockContainer"] { display: none; }
+
+/* Make the header itself transparent + small, but keep its children clickable */
+header[data-testid="stHeader"] {
+  background: transparent !important;
+  height: 0 !important;
+}
+header[data-testid="stHeader"] [data-testid="stToolbar"],
+header[data-testid="stHeader"] [data-testid="stStatusWidget"],
+header[data-testid="stHeader"] [data-testid="stDecoration"] {
+  display: none !important;
+}
+
+/* === Sidebar collapse / expand =============================================
+   Streamlit 1.57 collapses by translating the sidebar -300px off-screen and
+   does not render a separate expand control — so users get stuck. We override
+   that: collapse shrinks the sidebar to a 48px-wide strip with the toggle
+   button still reachable. */
+
+/* Default expanded width — wide enough for the longest project name
+   ("Pacajai REDD+ Project (formerly ADPML Portel-Pará)") and a status pill
+   on the same row. User can still drag wider via Streamlit's resize handle. */
+[data-testid="stSidebar"] {
+  min-width: 340px !important;
+  transition: min-width 200ms ease, width 200ms ease;
+}
+
+/* When collapsed: shrink to a strip, no off-screen translate */
+[data-testid="stSidebar"][aria-expanded="false"] {
+  transform: none !important;
+  min-width: 48px !important;
+  width: 48px !important;
+  overflow: hidden !important;
+}
+/* Hide the inner content but keep the header (which holds the toggle button) */
+[data-testid="stSidebar"][aria-expanded="false"] [data-testid="stSidebarUserContent"],
+[data-testid="stSidebar"][aria-expanded="false"] [data-testid="stSidebarContent"] > div:not([data-testid="stSidebarHeader"]) {
+  visibility: hidden;
+}
+[data-testid="stSidebar"][aria-expanded="false"] [data-testid="stSidebarHeader"] {
+  width: 48px !important;
+  padding: 16px 8px !important;
+  justify-content: center !important;
+}
+[data-testid="stSidebar"][aria-expanded="false"] [data-testid="stLogoSpacer"] {
+  display: none !important;
+}
+[data-testid="stSidebar"][aria-expanded="false"] [data-testid="stSidebarCollapseButton"] {
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* Always show the collapse button — Streamlit's own CSS hides it by default
+   in v1.57 unless you hover on the sidebar, which is unusable for our shell. */
+[data-testid="stSidebarCollapseButton"],
+[data-testid="stSidebarCollapseButton"] button {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Style the collapse/expand button to match the theme */
+[data-testid="stSidebarCollapseButton"] button {
+  background: transparent !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text-faint) !important;
+  border-radius: 0 !important;
+}
+[data-testid="stSidebarCollapseButton"] button:hover {
+  border-color: var(--accent-bright) !important;
+  color: var(--accent-bright) !important;
+}
+[data-testid="stSidebarCollapseButton"] button [data-testid="stIconMaterial"] {
+  color: var(--text) !important;
+}
 
 /* Body & page bg */
 html, body, .stApp { background: var(--bg) !important; color: var(--text) !important; font-family: var(--font-body) !important; }
