@@ -1,0 +1,163 @@
+{
+  "project": {
+    "id": "VCS934",
+    "name": "Mai Ndombe REDD+ Project",
+    "country": "Democratic Republic of the Congo",
+    "hectares": 299640,
+    "project_start": "2011-02-25",
+    "centroid": [
+      -1.957187,
+      18.043932
+    ],
+    "bbox": [
+      17.69092091517315,
+      -2.377513487728228,
+      18.30854687019643,
+      -1.655514503044811
+    ],
+    "registry_url": "https://registry.verra.org/app/projectDetail/VCS/934",
+    "boundary_source": "real_kml_polygon"
+  },
+  "sentinel": {
+    "2018": {
+      "project_id": "VCS934",
+      "year": 2018,
+      "scene": {
+        "id": "S2B_33MZT_20180821_0_L2A",
+        "datetime": "2018-08-21T09:16:00.674000Z",
+        "cloud_cover": 4.30844,
+        "bbox": [
+          17.69618586811668,
+          -2.799522628924709,
+          18.35187317902482,
+          -1.8061708520605049
+        ],
+        "mgrs_tile": 33
+      },
+      "local_paths": {
+        "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS934/2018/red.tif",
+        "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS934/2018/nir.tif",
+        "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS934/2018/scl.tif",
+        "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS934/2018/visual.tif"
+      },
+      "fetched_at": "2026-05-02T06:52:08.747298+00:00"
+    },
+    "2020": {
+      "project_id": "VCS934",
+      "year": 2020,
+      "scene": {
+        "id": "S2B_33MZT_20200830_0_L2A",
+        "datetime": "2020-08-30T09:21:10.856000Z",
+        "cloud_cover": 13.724509,
+        "bbox": [
+          17.69618586811668,
+          -2.799522628924709,
+          18.34089562590693,
+          -1.806191209731686
+        ],
+        "mgrs_tile": 33
+      },
+      "local_paths": {
+        "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS934/2020/red.tif",
+        "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS934/2020/nir.tif",
+        "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS934/2020/scl.tif",
+        "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS934/2020/visual.tif"
+      },
+      "fetched_at": "2026-05-02T06:54:03.703672+00:00"
+    },
+    "2022": {
+      "project_id": "VCS934",
+      "year": 2022,
+      "scene": {
+        "id": "S2B_33MZT_20220830_0_L2A",
+        "datetime": "2022-08-30T09:21:08.429000Z",
+        "cloud_cover": 9.042303,
+        "bbox": [
+          17.69618586811668,
+          -2.7986189250020415,
+          18.342601493310788,
+          -1.806188050609473
+        ],
+        "mgrs_tile": 33
+      },
+      "local_paths": {
+        "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS934/2022/red.tif",
+        "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS934/2022/nir.tif",
+        "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS934/2022/scl.tif",
+        "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS934/2022/visual.tif"
+      },
+      "fetched_at": "2026-05-02T06:56:53.022058+00:00"
+    },
+    "2024": {
+      "project_id": "VCS934",
+      "year": 2024,
+      "scene": {
+        "id": "S2A_33MZT_20240804_0_L2A",
+        "datetime": "2024-08-04T09:21:09.846000Z",
+        "cloud_cover": 5.181871,
+        "bbox": [
+          17.69618586811668,
+          -2.7986189166236874,
+          18.338472137850385,
+          -1.8061956950567966
+        ],
+        "mgrs_tile": 33
+      },
+      "local_paths": {
+        "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS934/2024/red.tif",
+        "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS934/2024/nir.tif",
+        "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS934/2024/scl.tif",
+        "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS934/2024/visual.tif"
+      },
+      "fetched_at": "2026-05-02T06:58:50.713029+00:00"
+    }
+  },
+  "hansen": {
+    "lossyear": [
+      "/Users/berlin/CarbonVerifier/data/raw/hansen/Hansen_GFC-2023-v1.11_lossyear_00N_010E.tif"
+    ],
+    "treecover2000": [
+      "/Users/berlin/CarbonVerifier/data/raw/hansen/Hansen_GFC-2023-v1.11_treecover2000_00N_010E.tif"
+    ]
+  },
+  "forest_loss_summary": {
+    "bbox": [
+      17.69092091517315,
+      -2.377513487728228,
+      18.30854687019643,
+      -1.655514503044811
+    ],
+    "treecover_threshold_pct": 30,
+    "pixel_area_ha": 0.0774,
+    "forest_2000_ha": 280071.5,
+    "loss_by_year_ha": {
+      "2001": 675.65,
+      "2002": 417.9,
+      "2003": 349.32,
+      "2004": 419.37,
+      "2005": 1046.33,
+      "2006": 90.79,
+      "2007": 231.51,
+      "2008": 836.57,
+      "2009": 746.32,
+      "2010": 1927.57,
+      "2011": 455.59,
+      "2012": 491.59,
+      "2013": 4257.55,
+      "2014": 1932.05,
+      "2015": 461.94,
+      "2016": 1036.58,
+      "2017": 1016.15,
+      "2018": 2264.11,
+      "2019": 1360.67,
+      "2020": 1957.06,
+      "2021": 867.76,
+      "2022": 1268.71,
+      "2023": 2450.73
+    },
+    "loss_pre_project_start_ha": 6741.33,
+    "loss_post_project_start_ha": 19820.49,
+    "project_start_year": 2011
+  },
+  "fetched_at": "2026-05-02T06:59:30.399376+00:00"
+}
