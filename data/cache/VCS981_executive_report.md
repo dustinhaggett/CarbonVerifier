@@ -1,48 +1,49 @@
-# EXECUTIVE BRIEF — Carbon Credit Due Diligence
-**Project:** Cikel Brazilian Amazon REDD APD (VCS981) | **Buyer on Record:** Microsoft
-**Registry:** Verra VCS | **Registered Area:** 27,435 ha | **Analysis Date:** 2025
+# EXECUTIVE BRIEF: ADPML / Pacajai REDD+ (Portel-Pará)
 
 ---
 
-## 1. RISK RATING: CRITICAL
-The project has lost **39.9% of its 2000 baseline forest cover since project start**, outpacing the mean loss rate of five nearby unprotected control areas (22.0%), rendering additionality claims unsupported by satellite evidence.
+## 1. RISK RATING — **HIGH**
+
+The project has sustained 7,963 ha of in-boundary forest loss since its 2009 start date, including multiple years of accelerating loss, while the additionality signal is weak and highly sensitive to control-area selection.
 
 ---
 
 ## 2. KEY FINDING
-Hansen GFC data shows **8,367 ha of forest loss inside the project boundary after the April 2009 start date**, against a pre-project baseline loss of 2,077 ha — a four-fold acceleration in cumulative impact. The most severe loss occurred in **2014–2016, when 5,324 ha were cleared in three years**, representing 25.4% of the entire 2000 forest stock in a single 36-month window. NDVI analysis corroborates persistent degradation: forest cover fell from 83.9% (2021) to 69.6% (2024), with the deforested fraction nearly tripling from 6.4% to 18.5% in the same period.
+
+Satellite-derived Hansen data confirms 7,963 ha of forest loss within the registered 148,975 ha boundary across the 2009–2023 project period (6.5% of 2000 forest cover), with loss never falling to zero in any single year. The project's mean post-start loss rate of 6.46% is lower than the control-area mean of 9.98%, yielding a 3.52 percentage-point difference — however, two of five control areas (Controls 1 and 3) recorded lower loss rates than the project itself (5.30% and 3.65%, respectively), undermining the baseline narrative. NDVI spot-scene coverage is sparse and inconsistent with the continuous annual loss signal from Hansen, suggesting the NDVI record does not capture the full deforestation footprint.
 
 ---
 
 ## 3. TIMELINE
 
-- **Pre-2009 (2001–2008):** 2,077 ha lost; annual losses modest except 2004–2006 spike (1,588 ha combined)
-- **2009-04-01:** Project registration date (VCS981)
-- **2009–2013:** 1,055 ha lost post-start; elevated but not catastrophic
-- **2014:** Single-year loss of **1,197 ha** — largest to that point; apparent breakdown in protection
-- **2015:** **1,054 ha** lost; loss rate remains critical
-- **2016:** **3,073 ha lost in a single year** — the project's worst calendar year, equivalent to 14.7% of 2000 forest stock
-- **2017–2021:** Partial recovery in loss rates (115–541 ha/yr), but cumulative damage irreversible
-- **2022:** Renewed spike of **694 ha**
-- **2023–2024 (NDVI):** Deforested fraction rises to **18.5%** by September 2024, the highest in the NDVI record
+- **Pre-2009 (2001–2008):** 1,459 ha of baseline loss; 2008 alone accounts for 485 ha — an accelerating trend that inflated the reference baseline
+- **2009:** Project launch; loss spikes immediately to 582 ha — the highest single-year figure to that point
+- **2013:** 457 ha lost; loss rate climbs despite three years of project activity
+- **2014:** 641 ha lost — project-era single-year peak at that stage
+- **2016–2017:** Back-to-back worst years: 998.8 ha and 984.7 ha, totaling 1,983 ha in 24 months
+- **2020:** 701 ha lost — third-highest project-era year, coinciding with Brazil's documented enforcement rollback
+- **2023:** 828.5 ha lost — the highest loss year since 2016–2017; no sign of stabilization at project close of data
 
 ---
 
 ## 4. ADDITIONALITY ASSESSMENT
-**Additionality is not demonstrated.** The project's post-start forest loss rate of **39.9%** exceeds the mean control-area rate of **22.0%** by **17.9 percentage points**. Three of five control areas (Controls 2–4) show loss rates of 11–14%, less than one-third the project rate. Even the two highest-loss controls (41.6% and 30.9%) represent areas with **no formal conservation commitment**. A credible REDD+ project should show meaningfully lower loss than unprotected comparators; this project shows the inverse. The carbon credits issued against this baseline claim protection that the satellite record does not support.
+
+**Verdict: Weak — additionality is not demonstrated at a credible confidence level.**
+
+The 3.52 pp differential between the project (6.46%) and the control mean (9.98%) is directionally positive but statistically fragile. Control-area loss rates span a 13.84 pp range (3.65%–17.49%), indicating high landscape heterogeneity and a poorly matched reference region. Two control areas outperformed the project with no protection mechanism. A 6.5% in-boundary loss rate over 15 years — amounting to nearly 8,000 ha of destroyed forest — is not consistent with a high-performance protection outcome. The project did not prevent two consecutive years of ~1,000 ha annual loss in 2016–2017, nor a renewed surge to 828 ha in 2023. Credits generated against years of high in-boundary loss warrant independent verification of whether buffer pool deductions and permanence reversals have been properly applied in the Verra registry.
 
 ---
 
-## 5. RECOMMENDED ACTION: **WRITE DOWN & INVESTIGATE — DO NOT RETIRE**
+## 5. RECOMMENDED ACTION
 
-The buyer (Microsoft) should take the following immediate steps:
+**INVESTIGATE before any further retirement or procurement.**
 
-1. **Suspend retirement** of any unretired VCS981 credits pending independent verification.
-2. **Commission a formal audit** against the registered Verra polygon (not the BBOX approximation used here) to confirm or narrow the loss figures with precise boundary data.
-3. **Engage Verra** to review whether VCS981 remains in good standing and whether monitoring reports filed by the project proponent reflect the loss events visible in Hansen data for 2014–2016 and 2022–2024.
-4. **Write down** the asset value of held credits to reflect material non-performance risk; the evidence does not support treating these as equivalent to verified emissions reductions.
-5. If audit confirms these findings, pursue **clawback or replacement credits** under applicable purchase agreement terms and disclose the impairment in corporate sustainability reporting.
+Specifically:
+1. **Audit the Verra registry record** for buffer pool withholdings, reversal accounting, and verification reports covering 2016–2017 and 2023 — the three highest-loss years constitute ~2,811 ha of in-boundary destruction.
+2. **Commission an independent additionality review** using a matched-control or synthetic-control methodology; the five-area control sample is insufficient given rate variance of ±7 pp.
+3. **Write down credit positions** attributable to vintage years 2016, 2017, and 2023 pending that review; do not retire these credits against corporate net-zero claims until reversal liability is resolved.
+4. **Do not acquire additional credits** from this project under current conditions.
 
 ---
 
-> **⚠ Boundary Caveat:** All hectare figures and loss rates are computed within a rectangular BBOX approximation centered on the project centroid. The exact registered Verra polygon was unavailable. Actual figures may differ; a precise polygon analysis is required before any regulatory or legal action. The directional findings — large absolute loss, negative additionality — are robust enough to warrant immediate investigation regardless of boundary refinement.
+*Caveat: Boundary analysis reflects the registered REAL_KML_POLYGON geometry. Hansen GFC uses a 30% canopy-cover threshold; losses below that threshold are not captured. NDVI scenes are limited to four observation years and should not be used as the primary deforestation indicator for this project.*

@@ -27,19 +27,21 @@ For any registered REDD+ carbon project, the pipeline:
 
 ## Headline findings (real, not placeholder)
 
-Three projects have run end-to-end through the pipeline:
+Three projects have run end-to-end through the pipeline using real boundaries pulled from the Verra registry document API. **All Verra IDs verified against `registry.verra.org/uiapi/resource/resourceSummary/{id}`.**
 
 | Project | Boundary | Forest@2000 | Post-start loss | Loss rate | Additionality verdict |
 |---|---|---|---|---|---|
-| **Cikel (VCS-981)** — Microsoft buyer | bbox | 20,970 ha | 8,367 ha | **39.9%** | **NEGATIVE −17.9 pp** |
-| **ADPML / Pacajai** — Verra-suspended | real KML, 5 polygons | 123,276 ha | 7,963 ha | 6.46% | WEAK +3.5 pp |
+| **Cikel (VCS-832)** — Microsoft buyer | real KML from Verra PDD | 205,961 ha | 4,363 ha | **2.12%** | **STRONG +24.98 pp** |
+| **Pacajai / ADPML (VCS-981)** — Verra-suspended | real KML, 5 polygons | 123,276 ha | 7,963 ha | 6.46% | WEAK +3.5 pp |
 | **Cordillera Azul (VCS-985)** — Shell, TotalEnergies buyers | real WDPA polygon | 1,360,318 ha | 8,345 ha | 0.61% | WEAK +3.2 pp |
 
-Each tells a different story:
+Each tells a different story — and notably, the **first one is a vindication, not a scandal**:
 
-- **Cikel** — satellite-visible failure. Forest cleared at nearly double the rate of nearby unprotected land, *during* the credit-issuance period. Negative additionality. The textbook "phantom credits" case.
-- **ADPML** — forest is mostly intact (project did marginally better than controls), but Verra suspended the project for **land-grabbing allegations** invisible to satellites. Demonstrates the limits of remote sensing as accountability infrastructure.
-- **Cordillera Azul** — only 0.6% loss inside the registered park (matches the published 1.35M ha exactly via WDPA polygon). But the controls also lost very little. The CarbonPlan critique applies: *the park was already a national park before the carbon project existed; satellite data cannot disentangle pre-existing legal protection from the REDD intervention*.
+- **Cikel (VCS-832)** — Cikel-Brasil Verde timber concession in Paragominas, Pará. Real KML pulled from the Verra PDD. Inside the actual project polygon, only 2.12% of forest cover lost since 2009 — vs. control areas at the same latitude that lost an average of 27%. **Strong additionality (+25 pp)**. Despite being named in *The Guardian*'s 2023 phantom-credits investigation, the satellite record at the registered boundary actually supports the project's protection claim.
+- **Pacajai / ADPML (VCS-981)** — forest is mostly intact (project did marginally better than controls, +3.5 pp), but Verra suspended the project for **land-grabbing allegations** that satellites cannot detect. Demonstrates the limits of remote sensing as accountability infrastructure.
+- **Cordillera Azul (VCS-985)** — only 0.6% loss inside the registered park (matches the published 1.35M ha exactly via WDPA polygon). But the controls also lost very little. The CarbonPlan critique applies: *the park was already a national park before the carbon project existed; satellite data cannot disentangle pre-existing legal protection from the REDD intervention*.
+
+Three distinct outcomes — vindication, blind-spot, baseline-trap — show that satellite verification is *necessary infrastructure*, not a one-shot "gotcha" tool.
 
 ## Screenshots
 

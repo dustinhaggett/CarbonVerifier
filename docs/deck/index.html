@@ -217,16 +217,16 @@ ul.bullets li:before{content:"// ";color:var(--accent-bright);margin-right:6px}
 
   <!-- 4 — DEMO: CIKEL ----------------------------------------------------- -->
   <section class="slide">
-    <div class="crumb">SLIDE_<b>04</b> // CASE_001 — VCS-981 CIKEL</div>
-    <h2>VCS-981 Cikel Brazilian Amazon REDD APD <span style="color:var(--text-faint);font-weight:400;font-size:22px;letter-spacing:0">— Microsoft buyer</span></h2>
-    <p class="lede">27,435 hectares of "protected" forest in Pará. Project start 2009. 22 years of Hansen GFC + 7 years of cloud-free Sentinel-2. The satellite tells one story; the credits tell another.</p>
+    <div class="crumb">SLIDE_<b>04</b> // CASE_001 — VCS-832 CIKEL</div>
+    <h2>VCS-832 Cikel Brazilian Amazon REDD APD <span style="color:var(--text-faint);font-weight:400;font-size:22px;letter-spacing:0">— Microsoft buyer</span></h2>
+    <p class="lede">Cikel-Brasil Verde timber concession in Paragominas, Pará. Real KML from the Verra PDD covers 208,000 ha; 27,435 ha is the carbon-credited subset. Project start 2009.</p>
     <div class="kpi-preview">
-      <div class="cell"><div class="l">Forest 2000</div><div class="v">20,970 <span class="unit">Ha</span></div></div>
-      <div class="cell"><div class="l">Post-start loss</div><div class="v error">−8,367 <span class="unit">Ha (39.9%)</span></div></div>
-      <div class="cell"><div class="l">Verdict</div><div class="v"><span class="pill pill-critical" style="font-size:14px;padding:5px 12px">CRITICAL</span></div></div>
-      <div class="cell"><div class="l">vs. Controls</div><div class="v error">−17.9 <span class="unit">pp</span></div></div>
+      <div class="cell"><div class="l">Forest 2000</div><div class="v">205,961 <span class="unit">Ha</span></div></div>
+      <div class="cell"><div class="l">Post-start loss</div><div class="v secondary">−4,363 <span class="unit">Ha (2.12%)</span></div></div>
+      <div class="cell"><div class="l">Verdict</div><div class="v"><span class="pill pill-low" style="font-size:14px;padding:5px 12px">STRONG</span></div></div>
+      <div class="cell"><div class="l">vs. Controls</div><div class="v secondary">+24.98 <span class="unit">pp</span></div></div>
     </div>
-    <p class="kicker">39.9% of the project's forest cleared <em style="color:var(--error);font-style:normal">during</em> the credit-issuance period — at nearly double the rate of nearby unprotected land. Negative additionality is unambiguous in the satellite record.</p>
+    <p class="kicker">Despite being named in <em style="color:var(--text);font-style:normal">The Guardian</em>'s 2023 phantom-credits investigation, the satellite record at the registered boundary actually <em style="color:var(--accent-bright);font-style:normal">supports</em> the project's protection claim. Surrounding unprotected Pará lost 27% of its forest. Cikel lost 2%.</p>
   </section>
 
   <!-- 5 — THREE VOICES ---------------------------------------------------- -->
@@ -238,19 +238,19 @@ ul.bullets li:before{content:"// ";color:var(--accent-bright);margin-right:6px}
       <div class="voice-card">
         <div class="who">// EXECUTIVE_BRIEF</div>
         <h4>For a Microsoft sustainability lead.</h4>
-        <div class="quote">"Risk Rating: CRITICAL. Project lost 39.9% of its 2000 forest cover after project start, outpacing the mean control rate of 22.0% by 17.9 pp. Recommended Action: WRITE DOWN / DO NOT RETIRE."</div>
+        <div class="quote">"Risk Rating: MODERATE. Project demonstrates strong additionality vs controls (+25 pp), but a 2016 single-year loss spike of 1,233.5 ha equals 28% of all post-start loss and warrants verification before further credit retirements."</div>
         <div class="footer">~550 words · risk pill · timeline · recommended action</div>
       </div>
       <div class="voice-card">
         <div class="who">// INVESTIGATIVE_ARTICLE</div>
         <h4>For a Guardian environment desk.</h4>
-        <div class="quote">"A flagship Brazilian REDD scheme destroyed 39.9% of its protected forest — worse than nearby areas with no conservation status whatsoever, according to satellite data analyzed by CarbonVerifier."</div>
+        <div class="quote">"Amazon Carbon Credit Project Shows Striking Forest Protection — But a Volatile Middle Decade Raises Questions. The most striking number isn't how much forest was saved; it's what happened in 2016."</div>
         <div class="footer">~640 words · narrative · per-year timeline · attribution</div>
       </div>
       <div class="voice-card">
         <div class="who">// REGULATOR_BRIEF</div>
         <h4>For a Verra compliance auditor.</h4>
-        <div class="quote">"CRITICAL VIOLATION — VCS Standard 3.4 (Additionality). Negative additionality of −17.86 pp; project area lost more forest than comparable unprotected areas. Recommended action: credit invalidation."</div>
+        <div class="quote">"VCS Standard 3.4 (Additionality) — SATISFIED on aggregate (project rate 2.12% vs control mean 27.1%). VCS Standard 3.14 (Monitoring) — flagged: 2016 in-boundary spike requires explanatory documentation against monitoring plan."</div>
         <div class="footer">~1,000 words · cited sections · table · action plan</div>
       </div>
     </div>
@@ -260,7 +260,7 @@ ul.bullets li:before{content:"// ";color:var(--accent-bright);margin-right:6px}
   <section class="slide">
     <div class="crumb">SLIDE_<b>06</b> // BEYOND CIKEL</div>
     <h2>Two more cases — three failure modes.</h2>
-    <p class="lede">Cikel is the textbook scandal. The other two cases reveal what satellites <em>can't</em> see, and where additionality math itself breaks down.</p>
+    <p class="lede">Cikel was the surprise vindication. The other two cases reveal what satellites <em>can't</em> see, and where additionality math itself breaks down.</p>
     <div class="case-row">
       <div class="case">
         <div class="head">
@@ -306,10 +306,11 @@ ul.bullets li:before{content:"// ";color:var(--accent-bright);margin-right:6px}
     <div class="crumb">SLIDE_<b>08</b> // EOF</div>
     <h2>Public repo. Open data. Reproducible.</h2>
     <ul class="bullets">
-      <li>6 demo projects pre-configured (3 fully analyzed end-to-end)</li>
+      <li>5 demo projects, real registry-pulled boundaries, 3 fully analyzed end-to-end</li>
       <li>Pipeline reruns from any STAC + Hansen + Claude credentials</li>
+      <li>scripts/fetch_verra_kml.py pulls any project's KML directly from the Verra registry</li>
       <li>Python 3.13 · uv · Streamlit · rasterio · shapely · folium · plotly · reportlab · PIL · anthropic</li>
-      <li>~3,200 lines of code · ~12 GB of cached satellite data on M3 Max</li>
+      <li>~3,400 lines of code · ~12 GB of cached satellite data on M3 Max</li>
     </ul>
     <div class="endcaps">
       <div class="endcap">

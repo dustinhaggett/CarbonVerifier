@@ -1,0 +1,163 @@
+{
+  "project": {
+    "id": "VCS832",
+    "name": "Cikel Brazilian Amazon REDD APD \u2014 Avoiding Planned Deforestation",
+    "country": "Brazil",
+    "hectares": 27435,
+    "project_start": "2009-04-01",
+    "centroid": [
+      -3.237149,
+      -48.30781
+    ],
+    "bbox": [
+      -48.8921270442,
+      -3.8569421387,
+      -48.1290315275,
+      -3.2077649695
+    ],
+    "registry_url": "https://registry.verra.org/app/projectDetail/VCS/832",
+    "boundary_source": "real_kml_polygon"
+  },
+  "sentinel": {
+    "2018": {
+      "project_id": "VCS832",
+      "year": 2018,
+      "scene": {
+        "id": "S2A_22MGB_20181023_0_L2A",
+        "datetime": "2018-10-23T13:42:07.458000Z",
+        "cloud_cover": 7.292902,
+        "bbox": [
+          -49.201294480169175,
+          -3.7056906919566326,
+          -48.21158825564575,
+          -2.7109586089556537
+        ],
+        "mgrs_tile": 22
+      },
+      "local_paths": {
+        "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS832/2018/red.tif",
+        "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS832/2018/nir.tif",
+        "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS832/2018/scl.tif",
+        "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS832/2018/visual.tif"
+      },
+      "fetched_at": "2026-05-02T05:15:33.620511+00:00"
+    },
+    "2020": {
+      "project_id": "VCS832",
+      "year": 2020,
+      "scene": {
+        "id": "S2B_22MGB_20200808_0_L2A",
+        "datetime": "2020-08-08T13:43:19.815000Z",
+        "cloud_cover": 0.004628,
+        "bbox": [
+          -49.201294480169175,
+          -3.7056906919566326,
+          -48.21158825564575,
+          -2.7109586089556537
+        ],
+        "mgrs_tile": 22
+      },
+      "local_paths": {
+        "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS832/2020/red.tif",
+        "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS832/2020/nir.tif",
+        "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS832/2020/scl.tif",
+        "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS832/2020/visual.tif"
+      },
+      "fetched_at": "2026-05-02T05:17:38.007935+00:00"
+    },
+    "2022": {
+      "project_id": "VCS832",
+      "year": 2022,
+      "scene": {
+        "id": "S2B_22MGB_20220818_0_L2A",
+        "datetime": "2022-08-18T13:43:18.531000Z",
+        "cloud_cover": 0.62528,
+        "bbox": [
+          -49.201294480169175,
+          -3.7056906919566326,
+          -48.21158825564575,
+          -2.7109586089556537
+        ],
+        "mgrs_tile": "22MGB"
+      },
+      "local_paths": {
+        "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS832/2022/red.tif",
+        "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS832/2022/nir.tif",
+        "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS832/2022/scl.tif",
+        "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS832/2022/visual.tif"
+      },
+      "fetched_at": "2026-05-02T05:19:47.093408+00:00"
+    },
+    "2024": {
+      "project_id": "VCS832",
+      "year": 2024,
+      "scene": {
+        "id": "S2A_22MGB_20240901_0_L2A",
+        "datetime": "2024-09-01T13:43:16.051000Z",
+        "cloud_cover": 0.000468,
+        "bbox": [
+          -49.201294480169175,
+          -3.7056906919566326,
+          -48.21158825564575,
+          -2.7109586089556537
+        ],
+        "mgrs_tile": 22
+      },
+      "local_paths": {
+        "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS832/2024/red.tif",
+        "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS832/2024/nir.tif",
+        "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS832/2024/scl.tif",
+        "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS832/2024/visual.tif"
+      },
+      "fetched_at": "2026-05-02T05:22:34.272241+00:00"
+    }
+  },
+  "hansen": {
+    "lossyear": [
+      "/Users/berlin/CarbonVerifier/data/raw/hansen/Hansen_GFC-2023-v1.11_lossyear_00N_050W.tif"
+    ],
+    "treecover2000": [
+      "/Users/berlin/CarbonVerifier/data/raw/hansen/Hansen_GFC-2023-v1.11_treecover2000_00N_050W.tif"
+    ]
+  },
+  "forest_loss_summary": {
+    "bbox": [
+      -48.8921270442,
+      -3.8569421387,
+      -48.1290315275,
+      -3.2077649695
+    ],
+    "treecover_threshold_pct": 30,
+    "pixel_area_ha": 0.0773,
+    "forest_2000_ha": 205961.3,
+    "loss_by_year_ha": {
+      "2001": 21.88,
+      "2002": 74.21,
+      "2003": 31.39,
+      "2004": 148.5,
+      "2005": 546.31,
+      "2006": 45.07,
+      "2007": 264.53,
+      "2008": 489.8,
+      "2009": 49.47,
+      "2010": 52.33,
+      "2011": 104.9,
+      "2012": 10.9,
+      "2013": 52.33,
+      "2014": 98.25,
+      "2015": 386.52,
+      "2016": 1233.54,
+      "2017": 517.86,
+      "2018": 413.34,
+      "2019": 391.54,
+      "2020": 141.39,
+      "2021": 484.23,
+      "2022": 258.89,
+      "2023": 167.44
+    },
+    "loss_pre_project_start_ha": 1621.69,
+    "loss_post_project_start_ha": 4362.93,
+    "project_start_year": 2009
+  },
+  "fetched_at": "2026-05-02T05:22:34.794786+00:00"
+}

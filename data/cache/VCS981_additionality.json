@@ -1,85 +1,85 @@
 {
-  "project_id": "VCS981",
+  "project_id": "ADPML",
   "project_start_year": 2009,
   "project": {
     "bbox": [
-      -47.62,
-      -3.37,
-      -47.48,
-      -3.23
+      -51.537952,
+      -2.423432,
+      -51.019143,
+      -1.79245
     ],
-    "forest_2000_ha": 20969.7,
-    "loss_post_start_ha": 8366.77,
-    "loss_rate_pct": 39.9
+    "forest_2000_ha": 123275.5,
+    "loss_post_start_ha": 7962.91,
+    "loss_rate_pct": 6.46
   },
   "controls": [
     {
       "index": 0,
       "bbox": [
-        -47.41,
-        -3.37,
-        -47.269999999999996,
-        -3.23
+        -50.7597385,
+        -2.423432,
+        -50.24092950000001,
+        -1.79245
       ],
-      "forest_2000_ha": 14588.66,
-      "loss_post_start_ha": 6061.55,
-      "loss_rate_pct": 41.55,
+      "forest_2000_ha": 102222.88,
+      "loss_post_start_ha": 12396.45,
+      "loss_rate_pct": 12.13,
       "error": null
     },
     {
       "index": 1,
       "bbox": [
-        -47.97,
-        -3.37,
-        -47.83,
-        -3.23
+        -52.83497449999999,
+        -2.423432,
+        -52.3161655,
+        -1.79245
       ],
-      "forest_2000_ha": 21695.06,
-      "loss_post_start_ha": 6701.76,
-      "loss_rate_pct": 30.89,
+      "forest_2000_ha": 99326.01,
+      "loss_post_start_ha": 5265.88,
+      "loss_rate_pct": 5.3,
       "error": null
     },
     {
       "index": 2,
       "bbox": [
-        -47.269999999999996,
-        -3.37,
-        -47.129999999999995,
-        -3.23
+        -50.24092950000001,
+        -2.423432,
+        -49.7221205,
+        -1.79245
       ],
-      "forest_2000_ha": 16134.88,
-      "loss_post_start_ha": 2291.61,
-      "loss_rate_pct": 14.2,
+      "forest_2000_ha": 106945.66,
+      "loss_post_start_ha": 12122.44,
+      "loss_rate_pct": 11.34,
       "error": null
     },
     {
       "index": 3,
       "bbox": [
-        -48.11,
-        -3.37,
-        -47.97,
-        -3.23
+        -53.35378349999999,
+        -2.423432,
+        -52.83497449999999,
+        -1.79245
       ],
-      "forest_2000_ha": 20615.33,
-      "loss_post_start_ha": 2331.57,
-      "loss_rate_pct": 11.31,
+      "forest_2000_ha": 86044.97,
+      "loss_post_start_ha": 3144.24,
+      "loss_rate_pct": 3.65,
       "error": null
     },
     {
       "index": 4,
       "bbox": [
-        -47.129999999999995,
-        -3.37,
-        -46.989999999999995,
-        -3.23
+        -49.7221205,
+        -2.423432,
+        -49.20331150000001,
+        -1.79245
       ],
-      "forest_2000_ha": 15954.95,
-      "loss_post_start_ha": 1955.57,
-      "loss_rate_pct": 12.26,
+      "forest_2000_ha": 90731.61,
+      "loss_post_start_ha": 15870.88,
+      "loss_rate_pct": 17.49,
       "error": null
     }
   ],
-  "mean_control_loss_rate_pct": 22.04,
-  "additionality_verdict": "NEGATIVE \u2014 project lost MORE forest than surrounding unprotected areas",
-  "rate_difference_pct": -17.86
+  "mean_control_loss_rate_pct": 9.98,
+  "additionality_verdict": "WEAK \u2014 project lost slightly less forest than controls",
+  "rate_difference_pct": 3.52
 }

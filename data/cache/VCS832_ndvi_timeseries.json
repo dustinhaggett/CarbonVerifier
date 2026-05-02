@@ -1,0 +1,58 @@
+[
+  {
+    "mean": 0.7741,
+    "median": 0.8197,
+    "std": 0.1408,
+    "pct_forest": 95.76,
+    "pct_deforested": 2.09,
+    "valid_pixels": 14175902,
+    "total_pixels": 41475492,
+    "year": 2018,
+    "scene_id": "S2A_22MGB_20181023_0_L2A",
+    "scene_date": "2018-10-23T13:42:07.458000Z",
+    "cloud_cover": 7.292902,
+    "status": "ok"
+  },
+  {
+    "mean": 0.8608,
+    "median": 0.8846,
+    "std": 0.1163,
+    "pct_forest": 97.7,
+    "pct_deforested": 1.33,
+    "valid_pixels": 14491997,
+    "total_pixels": 41475492,
+    "year": 2020,
+    "scene_id": "S2B_22MGB_20200808_0_L2A",
+    "scene_date": "2020-08-08T13:43:19.815000Z",
+    "cloud_cover": 0.004628,
+    "status": "ok"
+  },
+  {
+    "mean": 0.8531,
+    "median": 0.887,
+    "std": 0.1314,
+    "pct_forest": 96.94,
+    "pct_deforested": 1.4,
+    "valid_pixels": 13944281,
+    "total_pixels": 41475492,
+    "year": 2022,
+    "scene_id": "S2B_22MGB_20220818_0_L2A",
+    "scene_date": "2022-08-18T13:43:18.531000Z",
+    "cloud_cover": 0.62528,
+    "status": "ok"
+  },
+  {
+    "mean": 0.8267,
+    "median": 0.858,
+    "std": 0.1336,
+    "pct_forest": 96.17,
+    "pct_deforested": 2.19,
+    "valid_pixels": 14489184,
+    "total_pixels": 41475492,
+    "year": 2024,
+    "scene_id": "S2A_22MGB_20240901_0_L2A",
+    "scene_date": "2024-09-01T13:43:16.051000Z",
+    "cloud_cover": 0.000468,
+    "status": "ok"
+  }
+]

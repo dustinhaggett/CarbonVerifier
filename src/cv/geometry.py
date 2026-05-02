@@ -26,24 +26,63 @@ def _parse_coord_block(text: str) -> list[tuple[float, float]]:
     return out
 
 
+def _localname(tag: str) -> str:
+    """Strip the {namespace} prefix from an etree tag, returning the local name."""
+    return tag.rsplit("}", 1)[-1] if "}" in tag else tag
+
+
+def _load_kml_via_regex(text: str) -> list[Polygon]:
+    """Last-resort parser for KMLs with malformed XML namespaces (e.g. files
+    that reference ``xsi:`` without declaring it)."""
+    polys: list[Polygon] = []
+    # Match <Polygon>... up to the first matching </Polygon> (greedy outer boundary)
+    for poly_match in re.finditer(r"<Polygon\b[^>]*>(.*?)</Polygon>", text, re.DOTALL | re.IGNORECASE):
+        body = poly_match.group(1)
+        # Inside, find <outerBoundaryIs>...<coordinates>...</coordinates></LinearRing>
+        outer = re.search(
+            r"<outerBoundaryIs\b[^>]*>.*?<coordinates\b[^>]*>(.*?)</coordinates>",
+            body,
+            re.DOTALL | re.IGNORECASE,
+        )
+        if not outer:
+            continue
+        coords = _parse_coord_block(outer.group(1))
+        if len(coords) < 4:
+            continue
+        polys.append(Polygon(coords))
+    return polys
+
+
 def load_kml_polygons(path: Path) -> MultiPolygon:
     """Return all <Polygon><outerBoundaryIs> rings as a single (Multi)Polygon.
 
-    Inner rings (holes) are not parsed — the demo projects don't use them.
-    Buffer(0) is applied to fix any minor self-intersection introduced by
-    coarse coordinate dumps."""
-    tree = ET.parse(path)
-    root = tree.getroot()
-
+    Namespace-agnostic — Verra's exports use ``kml/2.2`` (current),
+    ``earth.google.com/kml/2.0`` (legacy Google Earth used by older PDDs),
+    and occasionally ship malformed namespace declarations (e.g. ``xsi:``
+    without an attribute declaration). Falls back to a regex parser if
+    strict XML parsing rejects the file.
+    Inner rings (holes) are dropped — the demo projects don't use them.
+    ``buffer(0)`` repairs any minor self-intersection from coarse coords."""
     polygons: list[Polygon] = []
-    for poly in root.findall(".//k:Polygon", KML_NS):
-        ring = poly.find(".//k:outerBoundaryIs/k:LinearRing/k:coordinates", KML_NS)
-        if ring is None or not ring.text:
-            continue
-        coords = _parse_coord_block(ring.text)
-        if len(coords) < 4:
-            continue
-        polygons.append(Polygon(coords))
+    try:
+        tree = ET.parse(path)
+        root = tree.getroot()
+        for el in root.iter():
+            if _localname(el.tag) != "Polygon":
+                continue
+            ring_text: str | None = None
+            for sub in el.iter():
+                if _localname(sub.tag) == "coordinates" and sub.text:
+                    ring_text = sub.text
+                    break
+            if not ring_text:
+                continue
+            coords = _parse_coord_block(ring_text)
+            if len(coords) < 4:
+                continue
+            polygons.append(Polygon(coords))
+    except ET.ParseError:
+        polygons = _load_kml_via_regex(path.read_text(errors="ignore"))
 
     if not polygons:
         raise ValueError(f"No polygons found in KML: {path}")

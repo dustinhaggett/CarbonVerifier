@@ -35,17 +35,17 @@ The cadence: **6 slides + 2 live-app moments**, totalling ~90 seconds. Slide jum
 
 ## [LIVE APP — Map + KPI strip] · 0:33–0:52 · 19s
 
-**Switch to Streamlit tab.** Project should already be VCS-981 Cikel.
+**Switch to Streamlit tab.** Project should already be VCS-832 Cikel.
 
-> *"Pick a project. Cikel Brazilian Amazon, Verra ID 981. Microsoft is the named buyer. Twenty-thousand hectares of forest in 2000."*
+> *"Pick a project. Cikel Brazilian Amazon — Verra ID 832. Microsoft is the named buyer. Two hundred six thousand hectares of forest in 2000, inside the real registered concession boundary."*
 
 **Action:** Point to the FOREST 2000 KPI cell.
 
-> *"Eight thousand three hundred sixty-seven hectares lost during the credit-issuance period. Thirty-nine point nine percent."*
+> *"Forty-three hundred hectares lost during the credit-issuance period. Two point one percent. And the surrounding unprotected Pará landscape — same biome, same latitude — lost twenty-seven percent over the same window."*
 
-**Action:** Point to POST-START LOSS, then to the CRITICAL pill in ADDITIONALITY VERDICT.
+**Action:** Point to POST-START LOSS, then to the STRONG pill in ADDITIONALITY VERDICT.
 
-> *"Negative additionality. The project area lost more forest than nearby unprotected land. Now watch the satellite."*
+> *"Strong additionality. Twenty-five percentage points better than controls. The satellite vindicates the project. Now watch how it got there."*
 
 **Action:** Click the **TIME-LAPSE** tab. Let the GIF play one cycle (~7 seconds).
 
@@ -59,11 +59,11 @@ The cadence: **6 slides + 2 live-app moments**, totalling ~90 seconds. Slide jum
 
 **Action:** Trace the three cards left-to-right.
 
-> *"For Microsoft's sustainability lead — a 1-page brief with risk rating and recommended action: write down, do not retire."*
+> *"For Microsoft's sustainability lead — a 1-page brief with risk rating, timeline, and a recommended action."*
 >
-> *"For an investigative journalist — a 600-word narrative, naming only the buyers in the data, citing every number to its satellite source."*
+> *"For an investigative journalist — a 600-word narrative, naming only the buyers in the evidence block, citing every number to its satellite source."*
 >
-> *"For a Verra compliance auditor — a regulatory brief flagging Standard 3.4 additionality with a recommended credit-invalidation."*
+> *"For a Verra compliance auditor — a regulatory brief mapping the satellite findings to specific VCS Standard sections."*
 
 ---
 
@@ -71,7 +71,7 @@ The cadence: **6 slides + 2 live-app moments**, totalling ~90 seconds. Slide jum
 
 **Press `6`.**
 
-> *"Two more cases. ADPML — the forest is still standing, but Verra suspended the project for land-grabbing. Satellites verify cover; they can't verify consent. Cordillera Azul — only zero-point-six percent loss, but the park was already legally protected. The credits exist more in the baseline than in reality."*
+> *"Two more cases — three failure modes. Cikel was a vindication. ADPML — the forest is still standing, but Verra suspended the project for land-grabbing. Satellites verify cover; they can't verify consent. Cordillera Azul — only zero-point-six percent loss, but the park was already legally protected. The credits exist more in the baseline than in reality."*
 
 **Action:** Touch each case card as you describe it. End on Cordillera Azul.
 

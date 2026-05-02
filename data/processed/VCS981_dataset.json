@@ -1,232 +1,163 @@
 {
   "project": {
-    "id": "VCS981",
-    "name": "Cikel Brazilian Amazon REDD APD",
+    "id": "ADPML",
+    "name": "ADPML / Pacajai REDD+ (Portel-Par\u00e1)",
     "country": "Brazil",
-    "hectares": 27435,
-    "project_start": "2009-04-01",
+    "hectares": 148975,
+    "project_start": "2009-01-01",
     "centroid": [
-      -3.3,
-      -47.55
+      -2.05,
+      -51.3
     ],
     "bbox": [
-      -47.62,
-      -3.37,
-      -47.48,
-      -3.23
+      -51.537952,
+      -2.423432,
+      -51.019143,
+      -1.79245
     ],
-    "registry_url": "https://registry.verra.org/app/projectDetail/VCS/981",
-    "boundary_source": "approximate_bbox_from_centroid"
+    "registry_url": "https://registry.verra.org/",
+    "boundary_source": "real_kml_polygon"
   },
   "sentinel": {
     "2018": {
-      "project_id": "VCS981",
+      "project_id": "ADPML",
       "year": 2018,
       "scene": {
-        "id": "S2A_22MHB_20181020_0_L2A",
-        "datetime": "2018-10-20T13:32:21.456000Z",
-        "cloud_cover": 1.596874,
+        "id": "S2B_22MDC_20180901_0_L2A",
+        "datetime": "2018-09-01T13:51:03.459000Z",
+        "cloud_cover": 5.494663,
         "bbox": [
-          -47.7282276408648,
-          -3.7014614552471157,
-          -47.31232428027518,
-          -2.708544473449276
+          -51.900057305937096,
+          -2.80264204592482,
+          -50.912194040843374,
+          -1.8090605246239422
         ],
         "mgrs_tile": 22
       },
       "local_paths": {
-        "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2018/red.tif",
-        "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2018/nir.tif",
-        "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2018/scl.tif",
-        "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2018/visual.tif"
+        "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2018/red.tif",
+        "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2018/nir.tif",
+        "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2018/scl.tif",
+        "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2018/visual.tif"
       },
-      "fetched_at": "2026-05-01T11:46:57.792106+00:00"
-    },
-    "2019": {
-      "project_id": "VCS981",
-      "year": 2019,
-      "scene": {
-        "id": "S2A_22MHB_20190809_0_L2A",
-        "datetime": "2019-08-09T13:43:16.596000Z",
-        "cloud_cover": 8.826173,
-        "bbox": [
-          -48.302145499617595,
-          -3.7033948619102732,
-          -47.31877289345157,
-          -2.708553335520786
-        ],
-        "mgrs_tile": 22
-      },
-      "local_paths": {
-        "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2019/red.tif",
-        "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2019/nir.tif",
-        "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2019/scl.tif",
-        "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2019/visual.tif"
-      },
-      "fetched_at": "2026-05-01T11:48:53.854838+00:00"
+      "fetched_at": "2026-05-01T12:44:44.089005+00:00"
     },
     "2020": {
-      "project_id": "VCS981",
+      "project_id": "ADPML",
       "year": 2020,
       "scene": {
-        "id": "S2B_22MHB_20200907_0_L2A",
-        "datetime": "2020-09-07T13:43:15.444000Z",
-        "cloud_cover": 0.894677,
+        "id": "S2A_22MDC_20200905_0_L2A",
+        "datetime": "2020-09-05T13:53:11.217000Z",
+        "cloud_cover": 1.220776,
         "bbox": [
-          -48.302145499617595,
-          -3.7033948619102732,
-          -47.315807181277584,
-          -2.708544473449276
+          -51.900057305937096,
+          -2.80264204592482,
+          -50.912194040843374,
+          -1.8090605246239422
         ],
         "mgrs_tile": 22
       },
       "local_paths": {
-        "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2020/red.tif",
-        "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2020/nir.tif",
-        "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2020/scl.tif",
-        "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2020/visual.tif"
+        "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2020/red.tif",
+        "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2020/nir.tif",
+        "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2020/scl.tif",
+        "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2020/visual.tif"
       },
-      "fetched_at": "2026-05-01T11:52:00.603884+00:00"
-    },
-    "2021": {
-      "project_id": "VCS981",
-      "year": 2021,
-      "scene": {
-        "id": "S2A_22MHB_20210808_0_L2A",
-        "datetime": "2021-08-08T13:43:15.420000Z",
-        "cloud_cover": 0.826768,
-        "bbox": [
-          -48.302145499617595,
-          -3.7033948619102732,
-          -47.31677335882046,
-          -2.7085472203988616
-        ],
-        "mgrs_tile": 22
-      },
-      "local_paths": {
-        "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2021/red.tif",
-        "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2021/nir.tif",
-        "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2021/scl.tif",
-        "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2021/visual.tif"
-      },
-      "fetched_at": "2026-05-01T11:54:34.306009+00:00"
+      "fetched_at": "2026-05-01T12:56:33.939703+00:00"
     },
     "2022": {
-      "project_id": "VCS981",
+      "project_id": "ADPML",
       "year": 2022,
       "scene": {
-        "id": "S2B_22MHB_20220729_0_L2A",
-        "datetime": "2022-07-29T13:43:17.650000Z",
-        "cloud_cover": 5.205815,
+        "id": "S2A_22MDC_20221005_0_L2A",
+        "datetime": "2022-10-05T13:53:13.761000Z",
+        "cloud_cover": 9.398303,
         "bbox": [
-          -48.302145499617595,
-          -3.7024911731813095,
-          -47.32487794657939,
-          -2.7085719859172555
+          -51.900057305937096,
+          -2.80264204592482,
+          -50.912194040843374,
+          -1.8090605246239422
         ],
-        "mgrs_tile": "22MHB"
+        "mgrs_tile": "22MDC"
       },
       "local_paths": {
-        "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2022/red.tif",
-        "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2022/nir.tif",
-        "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2022/scl.tif",
-        "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2022/visual.tif"
+        "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2022/red.tif",
+        "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2022/nir.tif",
+        "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2022/scl.tif",
+        "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2022/visual.tif"
       },
-      "fetched_at": "2026-05-01T12:07:01.129656+00:00"
-    },
-    "2023": {
-      "project_id": "VCS981",
-      "year": 2023,
-      "scene": {
-        "id": "S2B_22MHB_20230830_0_L2A",
-        "datetime": "2023-08-30T13:33:22.592000Z",
-        "cloud_cover": 0.000216,
-        "bbox": [
-          -47.727018095055314,
-          -3.7014569699476016,
-          -47.31232428027518,
-          -2.708544473449276
-        ],
-        "mgrs_tile": 22
-      },
-      "local_paths": {
-        "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2023/red.tif",
-        "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2023/nir.tif",
-        "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2023/scl.tif",
-        "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2023/visual.tif"
-      },
-      "fetched_at": "2026-05-01T11:56:28.482097+00:00"
+      "fetched_at": "2026-05-01T13:15:46.997295+00:00"
     },
     "2024": {
-      "project_id": "VCS981",
+      "project_id": "ADPML",
       "year": 2024,
       "scene": {
-        "id": "S2B_22MHB_20240903_0_L2A",
-        "datetime": "2024-09-03T13:33:20.682000Z",
-        "cloud_cover": 0.002946,
+        "id": "S2B_22MDC_20240711_0_L2A",
+        "datetime": "2024-07-11T13:53:08.652000Z",
+        "cloud_cover": 9.006659,
         "bbox": [
-          -47.728996413423275,
-          -3.701464305187929,
-          -47.31232428027518,
-          -2.708544473449276
+          -51.900057305937096,
+          -2.80264204592482,
+          -50.912194040843374,
+          -1.8090605246239422
         ],
         "mgrs_tile": 22
       },
       "local_paths": {
-        "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2024/red.tif",
-        "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2024/nir.tif",
-        "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2024/scl.tif",
-        "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2024/visual.tif"
+        "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2024/red.tif",
+        "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2024/nir.tif",
+        "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2024/scl.tif",
+        "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2024/visual.tif"
       },
-      "fetched_at": "2026-05-01T12:08:21.507190+00:00"
+      "fetched_at": "2026-05-01T14:18:27.592112+00:00"
     }
   },
   "hansen": {
     "lossyear": [
-      "/Users/berlin/CarbonVerifier/data/raw/hansen/Hansen_GFC-2023-v1.11_lossyear_00N_050W.tif"
+      "/Users/berlin/CarbonVerifier/data/raw/hansen/Hansen_GFC-2023-v1.11_lossyear_00N_060W.tif"
     ],
     "treecover2000": [
-      "/Users/berlin/CarbonVerifier/data/raw/hansen/Hansen_GFC-2023-v1.11_treecover2000_00N_050W.tif"
+      "/Users/berlin/CarbonVerifier/data/raw/hansen/Hansen_GFC-2023-v1.11_treecover2000_00N_060W.tif"
     ]
   },
   "forest_loss_summary": {
     "bbox": [
-      -47.62,
-      -3.37,
-      -47.48,
-      -3.23
+      -51.537952,
+      -2.423432,
+      -51.019143,
+      -1.79245
     ],
     "treecover_threshold_pct": 30,
-    "pixel_area_ha": 0.0773,
-    "forest_2000_ha": 20969.7,
+    "pixel_area_ha": 0.0774,
+    "forest_2000_ha": 123275.5,
     "loss_by_year_ha": {
-      "2001": 33.25,
-      "2002": 76.7,
-      "2003": 61.01,
-      "2004": 505.69,
-      "2005": 730.7,
-      "2006": 351.89,
-      "2007": 233.36,
-      "2008": 84.05,
-      "2009": 146.99,
-      "2010": 611.0,
-      "2011": 17.47,
-      "2012": 91.09,
-      "2013": 188.36,
-      "2014": 1196.95,
-      "2015": 1054.37,
-      "2016": 3072.49,
-      "2017": 541.03,
-      "2018": 203.9,
-      "2019": 115.37,
-      "2020": 154.41,
-      "2021": 169.88,
-      "2022": 694.2,
-      "2023": 109.26
+      "2001": 276.93,
+      "2002": 34.52,
+      "2003": 75.93,
+      "2004": 253.94,
+      "2005": 103.95,
+      "2006": 112.23,
+      "2007": 116.1,
+      "2008": 485.21,
+      "2009": 582.04,
+      "2010": 193.34,
+      "2011": 299.76,
+      "2012": 178.4,
+      "2013": 457.5,
+      "2014": 641.25,
+      "2015": 287.92,
+      "2016": 998.83,
+      "2017": 984.66,
+      "2018": 635.21,
+      "2019": 476.16,
+      "2020": 701.15,
+      "2021": 424.07,
+      "2022": 274.07,
+      "2023": 828.55
     },
-    "loss_pre_project_start_ha": 2076.65,
-    "loss_post_project_start_ha": 8366.77,
+    "loss_pre_project_start_ha": 1458.81,
+    "loss_post_project_start_ha": 7962.91,
     "project_start_year": 2009
   },
-  "fetched_at": "2026-05-01T12:11:09.476998+00:00"
+  "fetched_at": "2026-05-01T14:19:21.246151+00:00"
 }

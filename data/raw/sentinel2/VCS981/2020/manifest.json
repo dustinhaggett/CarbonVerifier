@@ -1,23 +1,23 @@
 {
-  "project_id": "VCS981",
+  "project_id": "ADPML",
   "year": 2020,
   "scene": {
-    "id": "S2B_22MHB_20200907_0_L2A",
-    "datetime": "2020-09-07T13:43:15.444000Z",
-    "cloud_cover": 0.894677,
+    "id": "S2A_22MDC_20200905_0_L2A",
+    "datetime": "2020-09-05T13:53:11.217000Z",
+    "cloud_cover": 1.220776,
     "bbox": [
-      -48.302145499617595,
-      -3.7033948619102732,
-      -47.315807181277584,
-      -2.708544473449276
+      -51.900057305937096,
+      -2.80264204592482,
+      -50.912194040843374,
+      -1.8090605246239422
     ],
     "mgrs_tile": 22
   },
   "local_paths": {
-    "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2020/red.tif",
-    "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2020/nir.tif",
-    "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2020/scl.tif",
-    "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/VCS981/2020/visual.tif"
+    "red": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2020/red.tif",
+    "nir": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2020/nir.tif",
+    "scl": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2020/scl.tif",
+    "visual": "/Users/berlin/CarbonVerifier/data/raw/sentinel2/ADPML/2020/visual.tif"
   },
-  "fetched_at": "2026-05-01T11:52:00.603884+00:00"
+  "fetched_at": "2026-05-01T12:56:33.939703+00:00"
 }
