@@ -172,13 +172,80 @@ html, body, .stApp { background: var(--bg) !important; color: var(--text) !impor
   text-transform: uppercase; color: var(--text-faint);
 }
 
-/* Sidebar selectbox restyle */
-[data-testid="stSidebar"] [data-baseweb="select"] > div {
+/* === Selectbox + dropdown menu (BaseWeb) =================================== */
+/* Sidebar trigger */
+[data-testid="stSidebar"] [data-baseweb="select"] > div,
+[data-testid="stSidebar"] [data-baseweb="select"] [role="combobox"] {
   background: var(--surface) !important;
   border: 1px solid var(--border) !important;
   border-radius: 0 !important;
+  color: var(--text) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase;
+  min-height: 36px;
 }
-[data-testid="stSidebar"] [data-baseweb="select"] [data-baseweb="select-arrow"] svg { color: var(--text-faint); }
+[data-testid="stSidebar"] [data-baseweb="select"]:hover > div {
+  border-color: var(--accent-bright) !important;
+}
+[data-testid="stSidebar"] [data-baseweb="select"] svg {
+  color: var(--text-faint) !important; fill: var(--text-faint) !important;
+}
+[data-testid="stSidebar"] [data-baseweb="select"] [aria-selected="true"],
+[data-testid="stSidebar"] [data-baseweb="select"] [data-baseweb="tag"] {
+  background: transparent !important; color: var(--text) !important;
+}
+
+/* Dropdown popover/listbox — rendered at the document body root.
+   Streamlit's BaseWeb dropdown uses [data-baseweb="popover"] with li[role="option"]
+   inside (no [role="listbox"] wrapper). All visible surfaces inside need overrides
+   because emotion injects light backgrounds at every nesting level. */
+[data-baseweb="popover"],
+[data-baseweb="popover"] > div,
+[data-baseweb="popover"] > div > div,
+[data-baseweb="popover"] ul {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+  border-radius: 0 !important;
+}
+[data-baseweb="popover"] {
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4) !important;
+}
+[data-baseweb="popover"] ul {
+  padding: 0 !important;
+  font-family: var(--font-mono) !important;
+  list-style: none !important;
+}
+li[role="option"] {
+  background: var(--surface) !important;
+  color: var(--text-dim) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  padding: 8px 12px !important;
+  border-bottom: 1px solid var(--border-dim) !important;
+  border-radius: 0 !important;
+}
+li[role="option"]:last-child { border-bottom: none !important; }
+li[role="option"]:hover,
+li[role="option"][aria-selected="true"] {
+  background: var(--surface-high) !important;
+  color: var(--accent-bright) !important;
+}
+li[role="option"][aria-selected="true"] {
+  border-left: 2px solid var(--accent-bright) !important;
+  padding-left: 10px !important;
+}
+
+/* The placeholder/value text inside the trigger */
+[data-testid="stSidebar"] [data-baseweb="select"] [data-baseweb="select"] span,
+[data-testid="stSidebar"] [data-baseweb="select"] input {
+  color: var(--text) !important;
+  font-family: var(--font-mono) !important;
+}
 
 /* === Right-rail panels (ANOMALY_LOG, BIOMASS_DENSITY) ====================== */
 .panel {

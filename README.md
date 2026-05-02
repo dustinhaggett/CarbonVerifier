@@ -6,7 +6,9 @@ In January 2023, *The Guardian* and *Die Zeit* exposed that 90%+ of Verra's Amaz
 
 This repo gives them a way: pick a Verra project, watch the satellite data over time, get a Claude-generated audit report.
 
-![map view](docs/screenshots/01_map.png)
+![dashboard demo](docs/screenshots/00_try.gif)
+
+> *Switching across the four fully-analyzed demo projects — verdict pill, polygon shape, satellite imagery, and ANOMALY_LOG entries all rebind to the selected project's real data.*
 
 ## What it does
 
