@@ -1,37 +1,19 @@
 # Secrets
 .env
-.env.local
-.streamlit/secrets.toml
 
-# Python
+# Python venv + bytecode
 .venv/
 __pycache__/
-*.pyc
-.ipynb_checkpoints/
-*.egg-info/
 
-# OS / IDE
+# macOS
 .DS_Store
-.idea/
-.vscode/
 
 # Claude Code session state
 .claude/
 
 # Raw satellite data (multi-GB; regenerable via scripts/fetch_project.py).
-# We keep manifest.json sidecar files so users see what was fetched.
+# Manifest.json sidecars are tracked so users see what was fetched.
 data/raw/sentinel2/**/*.tif
 data/raw/sentinel2/**/*.tiff
 data/raw/sentinel2/**/*.jp2
 data/raw/hansen/*.tif
-
-# Regenerable rasters in cache
-data/cache/*.tif
-data/cache/*.tiff
-data/cache/*.png
-
-# Streamlit
-.streamlit/cache/
-
-# uv lock OK to commit, exclude its python build cache
-.python-version
